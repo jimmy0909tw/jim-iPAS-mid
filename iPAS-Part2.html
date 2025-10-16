@@ -1,0 +1,390 @@
+<!-- Chosen Palette: 學習者導向配色 (Deep Blue, Orange-Red, Teal, Purple/Yellow Highlight) -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>機器學習技術與應用 (L19-L34) 終極強化講義 - 靜態版</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 MathJax 以優美地渲染 LaTeX 公式 -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* 自定義顏色和樣式以模擬顏色區分 (與階段一文件保持一致) */
+        .color-main-title { color: #2c3e50; /* Deep Blue */ }
+        .color-section-title { color: #e74c3c; /* Orange-Red */ }
+        .color-sub-header { color: #00796b; /* Teal */ }
+        .table-header-bg { background-color: #f1f2f6; /* Light Blue-Gray */ }
+        .formula-bg { 
+            background-color: #ecf0f1; /* Extra Light Gray for formula block */
+            border-left: 5px solid #3498db; /* Blue accent */
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .key-emphasis { color: #8e44ad; /* Dark Purple for important text */ font-weight: 700; }
+        .key-highlight-bg { background-color: #fce8a8; /* Light Yellow for highlight */ }
+        .app-question { 
+            background-color: #f0fdf4; /* Light Green for Q&A */
+            border-left: 4px solid #10b981; /* Green border */
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        body { font-family: 'Inter', 'Microsoft JhengHei', Arial, sans-serif; }
+        
+        /* 確保表格內的文字可讀性 */
+        .data-table td, .data-table th {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* 確保內容區域的寬度，讓文件更容易閱讀 */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-6 md:p-8 min-h-screen">
+
+    <!-- 主內容區 (Main Content Area) -->
+    <main class="max-w-6xl mx-auto">
+        <header class="mb-10 text-center border-b-4 border-red-400 pb-4">
+            <h1 class="text-5xl font-extrabold color-main-title mb-2">機器學習技術與應用 (L19-L34) 終極強化講義</h1>
+            <p class="text-gray-500 text-lg">本講義專為應對考試中的 ML 數學基礎、模型評估與數據前處理情境題而設計。</p>
+        </header>
+
+        <!-- 圖卡 #1 內容：ML 基礎數學與模型優化 -->
+        <section id="card1" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">📉 圖卡 #1：機器學習基礎數學與優化技術</h2>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">💡 1. 損失函數 (Loss Function) 與優化</h3>
+            <p class="text-gray-600 mb-4">損失函數衡量模型預測與真實值之間的**誤差**，優化器 (Optimizer) 負責最小化這個誤差。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">類型</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">名稱與應用</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">迴歸 (Regression)</span></td>
+                            <td>**均方誤差 (MSE)**：懲罰大誤差更嚴厲。</td>
+                            <td><span class="key-highlight-bg">**數學老師**</span>：分數差太多會被加倍扣分 (平方)。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">分類 (Classification)</span></td>
+                            <td>**交叉熵 (Cross-Entropy)**：衡量兩個機率分佈的差異。</td>
+                            <td><span class="key-highlight-bg">**資訊論**</span>：當你預測信心度越高，結果卻錯了，損失懲罰就越大。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【核心公式】均方誤差 (Mean Squared Error, MSE)</p>
+                $$ J(\theta) = \frac{1}{N}\sum_{i=1}^{N}(y_i - \hat{y}_i)^2 $$
+                <p class="text-gray-800 font-semibold mb-2">【核心公式】梯度下降 (Gradient Descent) 權重更新</p>
+                $$ \theta_{new} = \theta_{old} - \eta \cdot \nabla J(\theta) $$
+                <p class="text-sm text-gray-600">其中 $J(\theta)$ 為損失函數，$\hat{y}_i$ 為模型預測值，$\eta$ (eta) 為**學習率 (Learning Rate)**，$\nabla J(\theta)$ 為梯度。</p>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>在一個預測股價波動的迴歸模型中，開發者發現模型總是對一些極端的股價暴漲/暴跌預測不準，且希望模型能更嚴厲地學習這些極端錯誤。請問應該選用 MSE 還是 MAE (平均絕對誤差) 作為損失函數？</p>
+                <p class="text-gray-500 mt-1">**答案**：應選用<span class="key-emphasis">**MSE**</span>。因為 MSE 對於較大的誤差值會進行<span class="key-emphasis">**平方放大懲罰**</span>，能迫使模型更重視並調整權重以減少這些極端錯誤。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">📈 2. 機器學習中的機率與統計</h3>
+            <p class="text-gray-600 mb-4">機率與統計提供數據理解和模型驗證的基礎。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">概念</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">目的與情境</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">延伸知識</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">貝葉斯定理 (Bayes' Theorem)</span></td>
+                            <td>用於計算**後驗機率**，根據新證據更新假設的機率。</td>
+                            <td>應用於**樸素貝葉斯分類器 (Naive Bayes)**，常處理文本分類。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">P-value</span></td>
+                            <td>衡量當虛無假設 (H0) 為真時，觀察到當前數據（或更極端數據）的機率。</td>
+                            <td>**P-value < $\alpha$ (0.05)**：結果**顯著**，拒絕 H0。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家新創公司進行 A/B 測試，比較兩種網頁設計對點擊率的影響。統計分析得出 P-value 為 0.08。如果採用的顯著水準 $\alpha$ 為 0.05，公司應該得出什麼結論？</p>
+                <p class="text-gray-500 mt-1">**答案**：因為 $P-value (0.08) > \alpha (0.05)$，所以**不能拒絕**虛無假設 (H0)。結論是：<span class="key-emphasis">**沒有足夠的統計證據證明兩種網頁設計在點擊率上有顯著差異**</span>。</p>
+            </div>
+        </section>
+
+        <!-- 圖卡 #2 內容：監督式學習、偏差/方差與評估指標 -->
+        <section id="card2" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">🎯 圖卡 #2：模型評估與 Bias-Variance 權衡</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🎯 1. 偏差與方差權衡 (Bias-Variance Trade-off)</h3>
+            <p class="text-gray-600 mb-4">理解模型的**準度**和**穩定度**，是診斷模型性能的基礎。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">問題</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">特徵</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">解決方案</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">高偏差 (High Bias) / 欠擬合 (Underfitting)</span></td>
+                            <td>模型**太簡單**；訓練集和測試集誤差**都很高**。</td>
+                            <td>增加特徵、使用更複雜的模型 (e.g., DNN)、減少正則化。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">高方差 (High Variance) / 過擬合 (Overfitting)</span></td>
+                            <td>模型**太複雜**；訓練集誤差**低**，測試集誤差**高**。</td>
+                            <td>增加訓練數據、**正則化 (Regularization)**、特徵選擇、早停 (Early Stopping)。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>您訓練一個深度學習模型來識別貓狗。模型在訓練集上的準確率高達 99.8%，但在從未見過的測試集上，準確率卻只有 65%。請問這個模型屬於哪種問題？你應該建議加入哪種技術來修復？</p>
+                <p class="text-gray-500 mt-1">**答案**：這是典型的<span class="key-emphasis">**高方差 (Overfitting)**</span> 問題。建議修復技術包括：增加<span class="key-emphasis">**正則化 (Regularization, 如 L2)**</span>、使用<span class="key-emphasis">**Dropout**</span>（深度學習專用），或進行**資料增強 (Data Augmentation)** 來擴充訓練集。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">📊 2. 分類模型評估指標 (Confusion Matrix)</h3>
+            <p class="text-gray-600 mb-4">針對不平衡數據，應跳脫單一準確率 (Accuracy)，專注於 TP/FP/TN/FN 的組合指標。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">指標名稱</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">公式</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">應用情境優先考量</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">精確度 (Precision)</span></td>
+                            <td>$$ P = \frac{TP}{TP + FP} $$</td>
+                            <td>**重視成本**：例如電郵垃圾郵件分類，<span class="key-highlight-bg">**FP (誤將好郵件標記為垃圾)**</span>的成本很高。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">召回率 (Recall)</span></td>
+                            <td>$$ R = \frac{TP}{TP + FN} $$</td>
+                            <td>**重視覆蓋**：例如醫療疾病診斷，<span class="key-highlight-bg">**FN (漏診)**</span>的成本很高。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">F1-score</span></td>
+                            <td>$$ F1 = \frac{2 \cdot P \cdot R}{P + R} $$</td>
+                            <td>當 Precision 和 Recall 都很重要，需要**平衡**時使用，尤其適用於數據不平衡。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>某詐欺檢測系統的目標是**盡可能找出所有潛在的詐欺交易**，即使可能會多標記一些正常交易。請問在評估此系統時，應優先關注哪個指標？為什麼？</p>
+                <p class="text-gray-500 mt-1">**答案**：應優先關注<span class="key-emphasis">**召回率 (Recall)**</span>。因為目標是「盡可能找出所有潛在詐欺交易」，代表要最小化 **FN (False Negative, 漏掉的詐欺)**，這與召回率的定義（所有真實詐欺中，被正確預測的比例）直接相關。</p>
+            </div>
+        </section>
+
+        <!-- 圖卡 #3 內容：數據前處理與特徵工程 -->
+        <section id="card3" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">🛠️ 圖卡 #3：資料前處理與特徵工程</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🧹 1. 缺失值處理與特徵縮放</h3>
+            <p class="text-gray-600 mb-4">乾淨、標準化的數據是高效訓練的先決條件。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">技術</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">目的</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻與適用模型</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">插補法 (Imputation)</span></td>
+                            <td>處理缺失值 (Missing Value)。</td>
+                            <td><span class="key-highlight-bg">**補考**</span>：用已知的數據（平均值/中位數/眾數）來填補遺漏的資料。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">標準化 (Standardization)</span></td>
+                            <td>將數據轉換為 Z-score（平均值 $\mu=0$，標準差 $\sigma=1$）。</td>
+                            <td><span class="key-highlight-bg">**統一考試成績**</span>：適用於**距離敏感**模型 (e.g., K-means, KNN, SVM, 神經網路)。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">正規化 (Normalization)</span></td>
+                            <td>將數據縮放到 [0, 1] 範圍內。</td>
+                            <td><span class="key-highlight-bg">**身高百分比**</span>：適用於特徵範圍有固定上下限時。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【核心公式】標準化 (Z-score)</p>
+                $$ Z = \frac{x - \mu}{\sigma} $$
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>您正在使用 K-近鄰演算法 (KNN) 建立一個分類模型，其中一個特徵是「年齡」（範圍 18-90），另一個特徵是「年收入」（範圍 30 萬 - 1,000 萬）。如果您未對數據進行任何縮放，結果會是怎樣？應如何處理？</p>
+                <p class="text-gray-500 mt-1">**答案**：結果將是<span class="key-emphasis">**年收入特徵會主導模型距離計算**</span>，使年齡特徵幾乎失去作用。應採用<span class="key-emphasis">**標準化 (Standardization)**</span>，將兩個特徵縮放到相似的尺度，以確保它們對模型的貢獻是公平的。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">⚖️ 2. 數據不平衡與維度降低</h3>
+            <p class="text-gray-600 mb-4">處理不平衡數據是分類模型部署的常見挑戰。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">技術</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">目的</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">優點/限制</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">上取樣 (Over-sampling)</span></td>
+                            <td>增加**少數類**樣本數量（如 SMOTE）。</td>
+                            <td>優點：不丟失信息。限制：可能導致**過擬合**或產生無效合成數據。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">下取樣 (Under-sampling)</span></td>
+                            <td>減少**多數類**樣本數量。</td>
+                            <td>優點：訓練速度快。限制：可能丟失**重要的多數類信息**。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">主成分分析 (PCA)</span></td>
+                            <td>**維度降低**：找到能最大化保留數據方差的新座標軸。</td>
+                            <td>優點：簡化模型，減少噪點。限制：新特徵**難以解釋**。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>在一個包含數千個特徵的數據集上，您發現模型訓練速度極慢，且有輕微的過擬合。您想減少特徵數量，但又不想丟失太多原始信息的方差。請問應使用什麼技術？這項技術的主要限制是什麼？</p>
+                <p class="text-gray-500 mt-1">**答案**：應使用**主成分分析 (PCA)** 進行維度降低。主要限制是：PCA 創建的<span class="key-emphasis">**新特徵 (主成分) 是原始特徵的線性組合，缺乏直觀意義**</span>，使得模型結果難以向業務方解釋。</p>
+            </div>
+        </section>
+
+        <!-- 圖卡 #4 內容：非監督式學習與深度學習進階 -->
+        <section id="card4" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">🌌 圖卡 #4：非監督式學習與神經網路進階</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🧩 1. 非監督式學習 (Unsupervised Learning)</h3>
+            <p class="text-gray-600 mb-4">非監督式學習處理**未標註**的數據，目標是發現數據內部的結構和規律。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">演算法</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">目的</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">K-means 分群</span></td>
+                            <td>將數據分成 $K$ 個組，使組內成員相似度高。</td>
+                            <td><span class="key-highlight-bg">**找組長**</span>：反覆將成員分配給最近的組長，並重新計算組長的位置（中心點）。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">Autoencoder (自編碼器)</span></td>
+                            <td>學習數據的**壓縮表示 (編碼)**，並嘗試**重建**。</td>
+                            <td><span class="key-highlight-bg">**畫像寫生**</span>：核心在於編碼器，其輸出是數據的**有效特徵表示**。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家製造業工廠希望使用 AI 系統來監控機器運行日誌。由於沒有歷史故障標籤，他們想讓 AI 自動學習正常日誌的模式。當一個新的日誌數據點出現，如果它與「正常」模式的重建差異過大，則觸發警報。請問應使用哪種非監督式學習模型？</p>
+                <p class="text-gray-500 mt-1">**答案**：應使用<span class="key-emphasis">**自編碼器 (Autoencoder)**</span>。方法是：只用正常日誌訓練 Autoencoder。當異常日誌輸入時，Autoencoder 將無法有效重建，導致**重建誤差 (Reconstruction Error) 異常高**，即可作為異常檢測的信號。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">🚀 2. 深度學習與正則化</h3>
+            <p class="text-gray-600 mb-4">正則化是深度學習中對抗過擬合的核心武器。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">技術</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">目的與機制</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">延伸：神經網路結構</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">L2 正則化 (Ridge)</span></td>
+                            <td>懲罰模型權重 (Weight) 的平方，使權重**均勻變小**。</td>
+                            <td>**CNN (卷積神經網路)**：處理圖像/空間數據。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">L1 正則化 (Lasso)</span></td>
+                            <td>懲罰模型權重的絕對值，傾向將不重要權重**直接設為 0**。</td>
+                            <td>**RNN/LSTM/Transformer**：處理序列/時間數據。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">Dropout (深度學習)</span></td>
+                            <td>在訓練時**隨機失活**部分神經元，迫使網路不依賴單一特徵。</td>
+                            <td>**Autoencoder**：用於降維、特徵提取。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【核心公式】L2 正則化後的損失函數</p>
+                $$ J_{L2}(\theta) = \text{Loss}(\theta) + \lambda \sum_{j=1}^{m} \theta_j^2 $$
+                <p class="text-sm text-gray-600">其中 $\lambda$ (Lambda) 是**正則化強度參數**，用來控制對權重懲罰的力度。</p>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>您建立了一個包含 50 個特徵的迴歸模型，發現模型嚴重過擬合，且您懷疑其中有大約 20 個特徵是完全無用的冗餘特徵。請問您應該使用 L1 還是 L2 正則化來改進模型？</p>
+                <p class="text-gray-500 mt-1">**答案**：應使用<span class="key-emphasis">**L1 正則化 (Lasso)**</span>。因為 L1 具有**稀疏性 (Sparsity)** 特性，它會驅使不重要的特徵權重直接收縮為 0，從而達到**自動進行特徵選擇**的效果，有效移除冗餘特徵。</p>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 py-6 mt-8 border-t border-gray-300">
+            <p>本講義涵蓋了機器學習技術與應用的核心數學、演算法和評估指標，祝您考試順利！</p>
+        </footer>
+    </main>
+
+</body>
+</html>

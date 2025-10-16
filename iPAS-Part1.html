@@ -1,0 +1,380 @@
+<!-- Chosen Palette: 學習者導向配色 (Deep Blue, Orange-Red, Teal, Purple/Yellow Highlight) -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI技術應用與規劃 (L11-L18) 終極強化講義 - 靜態版</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 MathJax 以優美地渲染 LaTeX 公式 (儘管階段一數學內容較少，仍保留) -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* 自定義顏色和樣式以模擬顏色區分 (與階段二文件保持一致) */
+        .color-main-title { color: #2c3e50; /* Deep Blue */ }
+        .color-section-title { color: #e74c3c; /* Orange-Red */ }
+        .color-sub-header { color: #00796b; /* Teal */ }
+        .table-header-bg { background-color: #f1f2f6; /* Light Blue-Gray */ }
+        .formula-bg { background-color: #ecf0f1; /* Extra Light Gray for formula block */ }
+        .key-emphasis { color: #8e44ad; /* Dark Purple for important text */ font-weight: 700; }
+        .key-highlight-bg { background-color: #fce8a8; /* Light Yellow for highlight */ }
+        .app-question { 
+            background-color: #f0fdf4; /* Light Green for Q&A */
+            border-left: 4px solid #10b981; /* Green border */
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        body { font-family: 'Inter', 'Microsoft JhengHei', Arial, sans-serif; }
+        
+        /* 確保表格內的文字可讀性 */
+        .data-table td, .data-table th {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* 確保內容區域的寬度，讓文件更容易閱讀 */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-6 md:p-8 min-h-screen">
+
+    <!-- 主內容區 (Main Content Area) -->
+    <main class="max-w-6xl mx-auto">
+        <header class="mb-10 text-center border-b-4 border-red-400 pb-4">
+            <h1 class="text-5xl font-extrabold color-main-title mb-2">人工智慧技術應用與規劃 (L11-L18) 終極強化講義</h1>
+            <p class="text-gray-500 text-lg">本講義專為應對考試中的 AI 基礎概念、應用情境與系統規劃情境題而設計。</p>
+        </header>
+
+        <!-- 圖卡 #1 內容：AI 核心基礎與 NLP 技術 -->
+        <section id="card1" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">🧠 圖卡 #1：AI 核心基礎與自然語言處理 (NLP)</h2>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">💡 1. AI、ML 與規則型系統的界線</h3>
+            <p class="text-gray-600 mb-4">理解 AI 的定義層次，以及機器學習與傳統程式設計的根本差異，是判斷情境題的關鍵。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">概念</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義與核心</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">人工智慧 (AI)</span></td>
+                            <td>使機器模擬人類智慧，完成任務的**總體目標**。</td>
+                            <td><span class="key-highlight-bg">**大腦的總目標**</span>：想要變得聰明。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">機器學習 (ML)</span></td>
+                            <td>透過數據**自動學習模式**和規則，而非程式設計師明確編寫規則。</td>
+                            <td><span class="key-highlight-bg">**學習的方法**</span>：透過看大量的範例來學習。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">規則型系統</span></td>
+                            <td><span class="key-highlight-bg">**事先定義**</span>所有邏輯 (e.g., IF A, THEN B)。</td>
+                            <td><span class="key-highlight-bg">**流程圖**</span>：每一步都是寫死的，不能適應未知的變化。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>某公司開發了一款象棋遊戲，該遊戲根據一組預定義的「移動規則」和「攻擊優先順序」來選擇最佳移動。請問該遊戲是否使用了機器學習 (ML) 技術？為什麼？</p>
+                <p class="text-gray-500 mt-1">**答案**：否。這屬於<span class="key-emphasis">**規則型系統 (Rule-Based System)**</span>，其邏輯是事先定義的，沒有透過數據「學習」來改進決策。若使用 ML，則需透過自我對弈或數據訓練來調整權重/策略。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">💬 2. NLP 核心流程與應用</h3>
+            <p class="text-gray-600 mb-4">NLP 是讓電腦理解人類語言的技術，以下是基礎處理步驟和關鍵技術。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">技術</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">目的與情境</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">斷詞 (Tokenization)</span></td>
+                            <td>將連續文本分割成最小語義單元（詞彙或符號）。</td>
+                            <td><span class="key-highlight-bg">**切麵包**</span>：把連續的一條麵包切成一片一片的（詞彙）。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">停用詞移除 (Stopword Removal)</span></td>
+                            <td>刪除頻繁出現但語義價值低的詞彙（如「的」、「是」、「a」）。</td>
+                            <td><span class="key-highlight-bg">**去除雜訊**</span>：刪除句子中不影響核心意義的「填充詞」。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">詞形還原 (Lemmatization)</span></td>
+                            <td>將不同型態的詞彙還原為詞根或字典形式 (e.g., running $\rightarrow$ run)。</td>
+                            <td><span class="key-highlight-bg">**查字典**</span>：將所有變化形都歸納為其最基本的形式。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>在進行中文文本的情緒分析（Sentiment Analysis）時，如果未進行「停用詞移除」，可能會造成什麼問題？</p>
+                <p class="text-gray-500 mt-1">**答案**：未移除停用詞會導致**特徵維度過高**，並可能使模型過度關注於這些<span class="key-emphasis">**無關情緒的詞彙**</span>，稀釋了真正有意義的詞彙（如「非常棒」、「糟糕」）的權重，降低分析準確性。</p>
+            </div>
+        </section>
+        
+        <!-- 圖卡 #2 內容：電腦視覺、生成式 AI 與多模態 -->
+        <section id="card2" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">🖼️ 圖卡 #2：電腦視覺 (CV)、生成式 AI (GAI) 與多模態</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">👁️ 1. 電腦視覺 (CV) 核心任務</h3>
+            <p class="text-gray-600 mb-4">CV 任務依據其輸出複雜度可分為不同層級，應區分其應用場景。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">任務類型</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">輸出 / 核心功能</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">應用場景</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">圖像分類 (Classification)</span></td>
+                            <td>給予單一標籤，回答「這張圖是什麼？」</td>
+                            <td>醫療影像判讀：**判斷**影像中是否有腫瘤。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">物體檢測 (Object Detection)</span></td>
+                            <td>給予**邊界框 (Bounding Box)** 和標籤，回答「目標在哪裡？是什麼？」</td>
+                            <td>自動駕駛：**定位**行人、車輛的位置。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">語義分割 (Semantic Segmentation)</span></td>
+                            <td>對圖像中的**每個像素**進行分類。</td>
+                            <td>複雜背景分離：**精確描繪**出道路、天空的輪廓。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家工廠希望建立 AI 系統來檢測生產線上產品表面的**三種不同類型瑕疵 (刮痕、污漬、裂縫)**，並**標示出瑕疵發生的確切區域**。請問這主要屬於哪兩種 CV 任務的結合？</p>
+                <p class="text-gray-500 mt-1">**答案**：**圖像分類 (Classification)**（識別是哪種瑕疵）和**物體檢測 (Object Detection)** 或 **語義分割 (Segmentation)**（標示出瑕疵的確切位置）。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">✍️ 2. 生成式 AI (GAI) 與 Transformer</h3>
+            <p class="text-gray-600 mb-4">GAI 實現了 AI 從「辨識」到「創造」的飛躍，Transformer 是其核心技術。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">概念</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義與核心</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">關鍵優勢</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">生成式 AI (GAI)</span></td>
+                            <td>學習數據的分佈，並創造**新的、未曾見過**的內容（文本、圖像、程式碼）。</td>
+                            <td>創造力與內容擴增。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">Transformer</span></td>
+                            <td>基於**自注意力機制 (Self-Attention)** 的架構。</td>
+                            <td>解決了 RNN/LSTM 的**依賴性長**且**無法並行**的限制，實現大規模訓練。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">多模態 AI</span></td>
+                            <td>同時處理並理解兩種或更多模態的數據（如圖像 + 文本 + 語音）。</td>
+                            <td>更全面地理解真實世界訊息。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>某大型語言模型 (LLM) 被要求將一篇長達五千字的英文論文翻譯成中文，並在翻譯過程中要保持語義一致性。請問 Transformer 架構中的**注意力機制**在此發揮了什麼關鍵作用？</p>
+                <p class="text-gray-500 mt-1">**答案**：注意力機制允許模型在翻譯輸出當前詞彙時，能<span class="key-emphasis">**同時查閱並權衡**</span>輸入序列（英文論文）中所有詞彙的重要性，從而確保長距離依賴關係的準確性。</p>
+            </div>
+        </section>
+
+        <!-- 圖卡 #3 內容：AI 倫理、隱私與法規 (GDPR) -->
+        <section id="card3" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">🛡️ 圖卡 #3：AI 倫理、資料隱私與法規治理</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">📝 1. 個人身份資訊 (PII) 與資料分類</h3>
+            <p class="text-gray-600 mb-4">了解資料的敏感程度是遵循隱私法規 (如 GDPR) 的第一步。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">分類</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義與範例</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">風險等級</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">直接識別 PII</span></td>
+                            <td>單獨即可明確識別個人 (e.g., 姓名、身份證字號、電子郵件)。</td>
+                            <td><span class="key-highlight-bg">**高**</span>：必須嚴格保護與加密。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">間接識別 PII</span></td>
+                            <td>需要結合其他資訊才能識別 (e.g., 郵遞區號、生日、職業、種族)。</td>
+                            <td><span class="key-highlight-bg">**中**</span>：屬於**準識別資訊 (Quasi-Identifiers)**，常透過匿名化處理。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">匿名化數據</span></td>
+                            <td>經過處理後，無法再逆向追溯到任何特定個人的數據。</td>
+                            <td><span class="key-highlight-bg">**低**</span>：不受 PII 法規嚴格限制。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家電商公司打算對其客戶數據進行分析。數據集包含「客戶姓名」、「購買商品」、「居住郵遞區號」。請問在分析前，僅將「客戶姓名」欄位刪除，是否足以滿足 GDPR 的隱私要求？</p>
+                <p class="text-gray-500 mt-1">**答案**：不足。雖然姓名是直接 PII，但「郵遞區號」結合「購買商品」等間接資訊，仍可能在特定情境下重新識別個人。<span class="key-emphasis">**應採取泛化、分桶等匿名化技術**</span>來處理間接 PII，以降低重識別風險。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">🇪🇺 2. 歐盟 GDPR 核心原則與權利</h3>
+            <p class="text-gray-600 mb-4">重點掌握資料主體的權利，這是情境題常考點。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">核心權利</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話解釋</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">被遺忘權 (Right to be Forgotten)</span></td>
+                            <td>資料主體在特定條件下，有權要求資料控制者刪除其個人資料。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">資料可攜權 (Right to Data Portability)</span></td>
+                            <td>資料主體有權以結構化、常用且機器可讀的格式，取得或轉移其個人資料。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">反對自動化決策權</span></td>
+                            <td>資料主體有權不受**純粹基於自動化處理**（包括側寫）的決策影響。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>某銀行使用 AI 系統來決定是否核發貸款，且整個決策過程完全由演算法執行，不經人工審核。若一名申請人被系統拒絕後，要求銀行解釋決策依據。銀行必須依據哪項 GDPR 權利來滿足申請人的要求？</p>
+                <p class="text-gray-500 mt-1">**答案**：**反對自動化決策權**。資料主體有權要求**人工介入**審核，並獲得<span class="key-emphasis">**決策背後邏輯的相關資訊**</span>，以確保決策的公平與透明。</p>
+            </div>
+        </section>
+
+        <!-- 圖卡 #4 內容：系統規劃與 MLOps/部署 -->
+        <section id="card4" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">⚙️ 圖卡 #4：AI 系統規劃、MLOps 與部署</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🏭 1. MLOps 流程與價值</h3>
+            <p class="text-gray-600 mb-4">MLOps (Machine Learning Operations) 旨在將 AI 模型視為軟體產品，實現可靠的生命週期管理。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">環節</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">目的</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">關鍵技術</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">模型版本控制 (Versioning)</span></td>
+                            <td>追蹤不同模型、數據集、程式碼的版本，確保**可重現性**。</td>
+                            <td>Git, DVC (Data Version Control)</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">持續整合 (CI)</span></td>
+                            <td>自動化測試程式碼和模型本身。</td>
+                            <td>自動化測試框架、單元測試。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">持續交付/部署 (CD)</span></td>
+                            <td>自動化將模型安全部署到生產環境。</td>
+                            <td>Docker 容器、Kubernetes (K8s) 編排。</td>
+                        </tr>
+                        <tr class="bg-gray-50 hover:bg-gray-100">
+                            <td><span class="key-emphasis">持續監控 (Monitoring)</span></td>
+                            <td>即時追蹤模型性能、數據分佈和延遲。</td>
+                            <td><span class="key-highlight-bg">**偵測模型漂移 (Model Drift)**</span> 和數據漂移 (Data Drift)。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>某公司將一個客戶流失預測模型部署到生產環境。幾個月後，模型預測的準確率開始持續下降。在 MLOps 流程中，這個問題主要應該由哪個環節偵測出來，以及應該採取什麼措施？</p>
+                <p class="text-gray-500 mt-1">**答案**：應由<span class="key-emphasis">**持續監控 (Monitoring)**</span>環節偵測。這屬於**模型漂移 (Model Drift)** 的現象，應觸發 **CI/CD** 流程，使用最新的數據對模型進行**再訓練 (Retraining)** 和**重新部署**。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">☁️ 2. 雲端運算 vs 邊緣運算</h3>
+            <p class="text-gray-600 mb-4">根據 AI 應用的需求 (延遲、頻寬、隱私)，選擇最佳的運算位置。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">架構</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">核心優勢</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">典型應用</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">雲端運算 (Cloud Computing)</span></td>
+                            <td>**高算力、大儲存、集中管理**。適用於訓練大型模型或複雜的批次推理。</td>
+                            <td>大型語言模型 (LLM) 推理、大規模圖像處理、資料倉儲分析。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">邊緣運算 (Edge Computing)</span></td>
+                            <td>**低延遲、保護數據隱私**。運算在資料源附近進行。</td>
+                            <td>自動駕駛的**即時**物體檢測、工廠即時品檢、無人機導航。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家醫院計劃在手術室內部署一個 AI 系統，用於**即時**輔助醫生識別病變組織。該系統極度重視**推論速度（低延遲）**和**病患數據的隱私保護**。請問該系統的 AI 推論模型應部署在哪裡？為什麼？</p>
+                <p class="text-gray-500 mt-1">**答案**：應部署在<span class="key-emphasis">**邊緣設備（終端裝置本地端）**</span>。原因：1. 手術環境要求<span class="key-emphasis">**最低延遲**</span>，將數據傳輸到雲端再返回會耗費寶貴時間。2. **病患數據**屬於敏感 PII，本地處理有助於滿足嚴格的<span class="key-emphasis">**隱私法規**</span>要求。</p>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 py-6 mt-8 border-t border-gray-300">
+            <p>本講義涵蓋了 AI 應用規劃與治理的核心必考點，請務必掌握情境判斷與流程知識。</p>
+        </footer>
+    </main>
+
+</body>
+</html>

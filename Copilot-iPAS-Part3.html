@@ -1,0 +1,70 @@
+<div style="font-family: 'Segoe UI', sans-serif; line-height: 1.6; background-color: #f9f9fc; padding: 20px;">
+
+  <!-- 標題 -->
+  <h1 style="color: #2c3e50; font-size: 32px; font-weight: bold;">📘 階段三：資料處理與模型訓練</h1>
+  <p style="color: #7f8c8d; font-size: 18px;">涵蓋資料前處理、模型訓練與優化三大模組，強化實作能力與效能判斷</p>
+
+  <!-- 資料前處理 -->
+  <div style="background-color: #eaf2ff; border-left: 6px solid #3498db; padding: 15px; margin-top: 30px;">
+    <h2 style="color: #2980b9; font-size: 24px;">🔹 資料前處理</h2>
+    <p style="color: #34495e;"><strong>原理：</strong>清洗與轉換資料，使其適合模型訓練，避免偏誤與不穩定。</p>
+
+    <ul style="color: #2c3e50;">
+      <li><strong>Z-score 標準化：</strong>使特徵平均值為 0，標準差為 1。<br><em>公式：</em> Z = (X - μ) / σ<br><em>比喻：像把不同單位的成績轉成「標準分」。</em></li>
+      <li><strong>Min-Max 正規化：</strong>將特徵縮放至 0~1 區間。<br><em>比喻：像把不同高度的人都壓縮到比例尺。</em></li>
+      <li><strong>資料重抽樣：</strong>平衡類別樣本數，避免模型偏向多數類別。</li>
+    </ul>
+
+    <p style="color:#16a085; font-weight:bold;">📌 應用題：</p>
+    <p style="color:#2c3e50;">若數據中出現特徵尺度差異極大（如年齡 0–100、收入 0–1,000,000），應採用哪種預處理方式？</p>
+    <ul style="color:#2c3e50;">
+      <li>(A) 移除尺度較小的欄位</li>
+      <li><strong>(B) Z-score 標準化</strong> ✅</li>
+      <li>(C) 對所有數值欄位加常數</li>
+      <li>(D) 不需處理，模型會自動調整</li>
+    </ul>
+  </div>
+
+  <!-- 模型訓練 -->
+  <div style="background-color: #fef6e4; border-left: 6px solid #f39c12; padding: 15px; margin-top: 30px;">
+    <h2 style="color: #d35400; font-size: 24px;">🔹 模型訓練</h2>
+    <p style="color: #34495e;"><strong>原理：</strong>使用訓練資料建立模型，使其學習資料間的規律。</p>
+
+    <ul style="color: #2c3e50;">
+      <li><strong>資料分割：</strong>將資料分為訓練集與測試集，避免過度擬合。</li>
+      <li><strong>Logistic Regression：</strong>用於二元分類，輸出機率值。</li>
+      <li><strong>模型評估：</strong>使用 Accuracy、Precision、Recall、F1-score 等指標。</li>
+    </ul>
+
+    <p style="color:#16a085; font-weight:bold;">📌 應用題：</p>
+    <p style="color:#2c3e50;">某公司希望根據顧客年齡與消費金額預測是否為高價值顧客，以下哪段程式碼順序正確？</p>
+    <ul style="color:#2c3e50;">
+      <li>(A) a → b → c → d</li>
+      <li><strong>(B) c → a → b → d</strong> ✅</li>
+      <li>(C) b → c → a → d</li>
+      <li>(D) d → a → c → b</li>
+    </ul>
+  </div>
+
+  <!-- 模型優化 -->
+  <div style="background-color: #e8f8f5; border-left: 6px solid #1abc9c; padding: 15px; margin-top: 30px;">
+    <h2 style="color: #16a085; font-size: 24px;">🔹 模型優化</h2>
+    <p style="color: #34495e;"><strong>原理：</strong>提升模型效能與穩定性，避免過度擬合與欠擬合。</p>
+
+    <ul style="color: #2c3e50;">
+      <li><strong>Adagrad：</strong>自動調整每個參數的學習率，適合稀疏資料。</li>
+      <li><strong>交叉驗證：</strong>多次分割資料驗證模型穩定性。</li>
+      <li><strong>正則化：</strong>限制模型複雜度，避免過度擬合。</li>
+    </ul>
+
+    <p style="color:#16a085; font-weight:bold;">📌 應用題：</p>
+    <p style="color:#2c3e50;">哪一種優化器會自動調整每個參數的學習率，特別適用於稀疏資料？</p>
+    <ul style="color:#2c3e50;">
+      <li>(A) Momentum</li>
+      <li><strong>(B) Adagrad</strong> ✅</li>
+      <li>(C) Adam</li>
+      <li>(D) SGD</li>
+    </ul>
+  </div>
+
+</div>

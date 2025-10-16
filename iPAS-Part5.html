@@ -1,0 +1,231 @@
+<!-- Chosen Palette: 學習者導向配色 (Deep Blue, Orange-Red, Teal, Purple/Yellow Highlight) -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 治理、法規合規與高階部署 (L50+) 終極強化講義 - 靜態版</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* 自定義顏色和樣式以模擬顏色區分 (與階段四文件保持一致) */
+        .color-main-title { color: #2c3e50; /* Deep Blue */ }
+        .color-section-title { color: #e74c3c; /* Orange-Red */ }
+        .color-sub-header { color: #00796b; /* Teal */ }
+        .table-header-bg { background-color: #f1f2f6; /* Light Blue-Gray */ }
+        .formula-bg { 
+            background-color: #ecf0f1; /* Extra Light Gray for formula block */
+            border-left: 5px solid #3498db; /* Blue accent */
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .key-emphasis { color: #8e44ad; /* Dark Purple for important text */ font-weight: 700; }
+        .key-highlight-bg { background-color: #fce8a8; /* Light Yellow for highlight */ }
+        .app-question { 
+            background-color: #f0fdf4; /* Light Green for Q&A */
+            border-left: 4px solid #10b981; /* Green border */
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        body { font-family: 'Inter', 'Microsoft JhengHei', Arial, sans-serif; }
+        
+        /* 確保表格內的文字可讀性 */
+        .data-table td, .data-table th {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* 確保內容區域的寬度，讓文件更容易閱讀 */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-6 md:p-8 min-h-screen">
+
+    <!-- 主內容區 (Main Content Area) -->
+    <main class="max-w-6xl mx-auto">
+        <header class="mb-10 text-center border-b-4 border-red-400 pb-4">
+            <h1 class="text-5xl font-extrabold color-main-title mb-2">AI 治理、法規合規與高階部署 (L50+) 終極強化講義</h1>
+            <p class="text-gray-500 text-lg">本講義專為應對 AI 系統的 MLOps、數據隱私、全球法規合規與架構決策情境題而設計。</p>
+        </header>
+
+        <!-- 圖卡 #1 內容：MLOps 與持續維運 -->
+        <section id="card1" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">⚙️ 圖卡 #1：MLOps、持續維護與模型漂移</h2>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🔁 1. MLOps 的核心目標與價值</h3>
+            <p class="text-gray-600 mb-4">MLOps (Machine Learning Operations) 旨在將機器學習模型從實驗室的筆記本，順利、安全、自動化地部署到生產環境並持續維護。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">MLOps 關鍵階段</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">主要活動</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">實驗管理 (Experimentation)</span></td>
+                            <td>追蹤不同模型的性能指標、版本和使用的資料集。</td>
+                            <td><span class="key-highlight-bg">**實驗室日誌**</span>：紀錄所有實驗細節。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">持續整合 (CI) / 部署 (CD)</span></td>
+                            <td>將模型打包（容器化）、自動測試並發布到生產環境。</td>
+                            <td><span class="key-highlight-bg">**自動化工廠**</span>：確保產品 (模型) 可靠且一致。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">持續監控 (CM)</span></td>
+                            <td>即時追蹤模型性能、數據特性和服務狀態。</td>
+                            <td><span class="key-highlight-bg">**健康檢查儀表板**</span>：發現模型生病 (漂移) 馬上發警報。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家新創公司開發了一個房價預測模型，最初準確率很高。但隨著時間推移，模型開始頻繁錯誤地預測郊區房價會上漲。經分析，發現近期許多人都湧入城市，郊區人口結構和收入水平發生了重大變化。請問這屬於哪一種模型漂移？MLOps 流程應如何應對？</p>
+                <p class="text-gray-500 mt-1">**答案**：這屬於<span class="key-emphasis">**概念漂移 (Concept Drift)**</span>。因為輸入特徵（如房屋面積）與目標變數（房價）之間的**關係**已經改變。MLOps 流程應在**持續監控 (CM)** 階段設定**概念漂移警報**，一旦觸發，應**自動觸發重新訓練**流程 (Retraining)，並使用最新的、能反映當前人口結構的數據集更新模型。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">📉 2. 模型漂移的量化與監控</h3>
+            <p class="text-gray-600 mb-4">為了實現自動化監控，我們需要量化生產數據與訓練數據的差異。</p>
+            
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【公式概念】數據漂移量化：KL 散度 (Kullback-Leibler Divergence)</p>
+                <p class="text-gray-700">KL 散度是衡量兩個機率分佈 $P$（生產數據分佈）和 $Q$（訓練數據分佈）之間差異的指標。值越大，漂移越嚴重。常用於衡量**數據漂移 (Data Drift)**：</p>
+                <!-- Conceptual Formula: KL Divergence -->
+                $$D_{KL}(P \parallel Q) = \sum_{i} P(i) \log \frac{P(i)}{Q(i)}$$
+                <p class="text-sm italic">白話比喻：它就像是**比較兩份數據的「菜單」**，看它們的菜色（特徵值）和數量（分佈機率）差了多少。當差異超過某個閾值時，就需要介入處理。</p>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>在一個信用卡詐欺檢測系統中，您發現模型準確率突然下降，但模型輸入的特徵（如交易金額、交易地點）的分佈與訓練時相比**沒有**明顯變化。請問您應該檢查哪兩種漂移指標？</p>
+                <p class="text-gray-500 mt-1">**答案**：</p>
+                <ul class="list-disc ml-6 text-gray-700">
+                    <li><span class="key-emphasis">**概念漂移 (Concept Drift)**</span>：雖然輸入數據沒變，但「真實世界中詐欺行為的模式」可能變了，導致輸入 $X$ 到輸出 $Y$ 的映射關係改變。</li>
+                    <li><span class="key-emphasis">**預測漂移 (Prediction Drift)**</span>：檢查模型輸出的預測分佈（例如：預測為詐欺的比例）是否與訓練時或過去的預測顯著不同。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 圖卡 #2 內容：數據隱私與全球法規 -->
+        <section id="card2" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">🔒 圖卡 #2：數據隱私、PII 與全球法規</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🔐 1. 隱私數據分類與處理</h3>
+            <p class="text-gray-600 mb-4">在高階 AI 應用中，數據分類是合規的首要步驟。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">數據類型</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義與範例</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">處理必要性</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">PII (直接識別資訊)</span></td>
+                            <td>單獨即可識別個人：姓名、身分證字號、電子郵件。</td>
+                            <td><span class="key-highlight-bg">**絕對需要加密或遮蔽**</span>。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">準識別資訊 (Quasi-Identifiers)</span></td>
+                            <td>單獨無法識別，但結合後可識別：生日、郵遞區號、性別。</td>
+                            <td>必須進行**泛化**或**分桶**處理，防止重識別攻擊。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">🛡️ 2. 隱私保護機器學習 (PPML)</h3>
+            <p class="text-gray-600 mb-4">當必須使用敏感數據時，PPML 技術是維持合規與訓練模型之間的平衡點。</p>
+
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【公式概念】差分隱私 (Differential Privacy - DP)</p>
+                <p class="text-gray-700">DP 透過向數據中添加**可控的數學噪音**，確保單一記錄的改變不會對模型輸出的結果造成顯著影響，從而保護個人身份。$\epsilon$ (Epsilon) 越小，隱私保護越強，但數據可用性越低。</p>
+                <!-- Conceptual Formula: Differential Privacy Epsilon -->
+                $$P(M(D_1) \in S) \le e^\epsilon P(M(D_2) \in S)$$
+                <p class="text-sm italic key-emphasis">白話比喻：**在數據湯裡加一點胡椒粉 (噪音)**，無論一個人有沒有在這鍋湯裡，湯的整體味道（模型的結果）都不會發生明顯變化。</p>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家醫院希望與外部研究機構合作，利用他們的病患數據訓練一個疾病診斷 AI 模型，但法規嚴格禁止將原始病歷資料移出醫院。該機構不能使用聯邦學習，請問他們應該採用哪一種 PPML 技術，才能在**數據不離開醫院**的前提下，讓外部模型在數據上運行？</p>
+                <p class="text-gray-500 mt-1">**答案**：應採用<span class="key-emphasis">**同態加密 (Homomorphic Encryption)**</span>。同態加密允許在**密文狀態**下對數據進行運算，即模型可以在**加密的數據**上進行推論或訓練，而無需解密，從而確保原始數據的機密性不被洩露。</p>
+            </div>
+        </section>
+
+        <!-- 圖卡 #3 內容：邊緣運算與系統架構決策 -->
+        <section id="card3" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">☁️ 圖卡 #3：邊緣運算、容器化與架構決策</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🚀 1. 邊緣運算 (Edge Computing) 決策考量</h3>
+            <p class="text-gray-600 mb-4">在邊緣部署 AI 模型（如工廠、無人機）是高階應用部署的常見模式。決策的依據是**需求**而非技術流行度。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">考量因素</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">Edge 部署原因</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">低延遲 (Latency)</span></td>
+                            <td>應用需要**毫秒級**即時響應（如自動駕駛、機械手臂）。</td>
+                            <td><span class="key-highlight-bg">**醫生在手術室現場**</span>，不能等雲端的診斷報告。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">頻寬限制 (Bandwidth)</span></td>
+                            <td>設備位於網路不穩定或**數據量巨大**的環境（如遠洋油輪、高解析度監控）。</td>
+                            <td><span class="key-highlight-bg">**只送摘要，不送全書**</span>：只將分析結果送回雲端。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">數據隱私 (Privacy)</span></td>
+                            <td>敏感數據**絕不允許離開本地設備**（如工廠良率數據、個人健康數據）。</td>
+                            <td><span class="key-highlight-bg">**保險櫃**</span>：數據從未離開本地端。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">📦 2. 容器化與服務化架構</h3>
+            <p class="text-gray-600 mb-4">使用 Docker 和 Kubernetes 是現代 MLOps 實現 CI/CD 的基石。</p>
+
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【延伸知識】Kubernetes (K8s) 的核心價值</p>
+                <p class="text-gray-700">K8s 的主要目標是**資源調度 (Scheduling)** 和**自我修復 (Self-Healing)**。如果服務發生故障，K8s 能自動重啟容器，確保服務的可用性。</p>
+                <p class="text-sm italic key-emphasis">白話比喻：**自動調度的管弦樂團**。每個樂手（模型）都被容器化，K8s 確保每個樂手都在正確的位子上，如果有人生病（容器崩潰），它會立刻找人替補（重新部署），保持音樂（服務）不間斷。</p>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家電商公司需要在多個國家部署一個推薦系統，且每個國家的資料中心環境和作業系統版本略有不同。為了確保模型在不同環境下的**運行一致性**並**簡化部署流程**，AI 架構師應該採用哪一項技術來包裝模型？該技術的核心優勢是什麼？</p>
+                <p class="text-gray-500 mt-1">**答案**：應採用<span class="key-emphasis">**容器化技術 (Docker)**</span>。核心優勢是**環境一致性**。容器將模型程式碼、運行時環境和所有依賴項打包在一起，確保**“在我的機器上運行良好”**可以擴展到**“在任何機器上運行良好”**，極大地簡化了跨平台部署的複雜性。</p>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 py-6 mt-8 border-t border-gray-300">
+            <p>本講義涵蓋了 AI 治理、MLOps、數據隱私與高階部署決策的核心知識點，您已完成整個學習路徑。祝您一切順利！</p>
+        </footer>
+    </main>
+
+</body>
+</html>

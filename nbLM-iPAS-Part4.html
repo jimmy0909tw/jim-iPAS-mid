@@ -1,0 +1,389 @@
+這是一份針對「AI應用規劃師中級學習路徑」中，**階段四：企業導入、部署與風險治理** 的核心知識點，轉換成的詳細圖卡式 HTML 格式講義。
+
+本階段（L212, L213, L234）是應用規劃師的核心能力，要求將 AI 技術知識轉化為商業解決方案，並處理部署和倫理問題。
+
+---
+
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>AI應用規劃師（中級）階段四：企業導入、部署與風險治理</title>
+    <style>
+        /* 整體佈局與字體設定 */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.8; 
+            color: #333; 
+            margin: 20px auto; 
+            max-width: 1200px; 
+            background-color: #f4f7f6;
+        }
+
+        /* 標題樣式 */
+        h1 { 
+            color: #004d99; 
+            border-bottom: 4px solid #004d99; 
+            padding-bottom: 15px; 
+            font-size: 2.2em; 
+            font-weight: 700; 
+        }
+        h2 { 
+            color: #cc3300; 
+            border-left: 8px solid #ffaa00; 
+            padding-left: 15px; 
+            background-color: #fff8e1; 
+            font-size: 1.8em; 
+            margin-top: 30px; 
+        }
+        h3 { 
+            color: #00796b; 
+            border-bottom: 2px dashed #b3e0ff; 
+            padding-bottom: 5px; 
+            font-size: 1.4em; 
+            font-weight: 600; 
+            margin-top: 25px;
+        }
+        h4 { 
+            color: #333; 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            margin-top: 15px;
+        }
+
+        /* 知識點圖卡容器 */
+        .knowledge-point { 
+            margin-top: 20px; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .knowledge-point:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        /* 白話比喻樣式 */
+        .analogy { 
+            font-style: italic; 
+            color: #00796b; 
+            padding: 10px 15px; 
+            background-color: #e8f5e9;
+            border-left: 4px solid #00c853;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        /* 公式區塊 */
+        .formula { 
+            background-color: #f0f0f0; 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin: 20px 0; 
+            overflow-x: auto;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* 應用題情境樣式 */
+        .application-scenario { 
+            background-color: #e6f7ff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 25px 0; 
+            border: 2px solid #b3e0ff;
+        }
+        .application-scenario strong { 
+            color: #004d99; 
+            font-size: 1.1em; 
+            font-weight: 700; 
+        }
+        .application-scenario p {
+            font-size: 1em;
+        }
+
+        /* 內容字體強調 */
+        strong { font-weight: bold; color: #004d99; }
+        .text-detail { font-size: 0.95em; color: #555; }
+        .tech-highlight { color: #ff5722; font-weight: bold; }
+        .risk-point { color: #d32f2f; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>AI 應用規劃師（中級）學習路徑：階段四詳細講義</h1>
+<p class="text-detail">此階段（L212, L213, L234）是應用規劃師的核心能力，要求將技術知識轉化為商業解決方案，並處理部署和倫理問題。本階段著重於 AI 專案導入的策略性工作、部署實務與法規遵循（如數據隱私、公平性）。</p>
+
+<h2>章節一：AI 導入評估與規劃策略（L21201, L21202）</h2>
+<p class="text-detail">AI 導入規劃是確保專案成功的關鍵。企業必須從業務需求、技術可行性與組織成熟度三方面進行系統性分析。</p>
+
+<h3>1.1 導入流程與需求分析</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 1.1.1：導入流程與痛點辨識</h4>
+    <p>AI 導入必須以業務需求為出發點。核心流程：<span class="tech-highlight"><strong>痛點分析 → KPI 設計 → PoC → 導入 → 監控</strong></span>。</p>
+    <ul>
+        <li><strong>痛點分析：</strong> 釐清業務流程中的瓶頸或服務缺口。</li>
+        <li><strong>KPI 設計：</strong> AI 導入應著眼於提升具體的業務目標（如提高效率、準確率、回應速度）。</li>
+        <li><strong>PoC（概念驗證）：</strong> 在最小風險下驗證導入假設、發掘問題，並逐步建立起 AI 專案導入的關鍵能力。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>企業進行 AI 導入前的評估分析，通常第一步應聚焦於？</p>
+        <p>（A）演算法選擇 （B）資料標註工具 <strong>（C）業務痛點與需求辨識</strong> （D）建立測試模型</p>
+        <p class="text-detail"><strong>解析：</strong> AI 導入需以業務需求為出發點，若無明確問題定義，後續模型開發將失焦。故選 (C)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.1.2：技術可行性與成本效益評估</h4>
+    <p>即便業務需求明確，仍需確認技術條件能否支持。</p>
+    <ul>
+        <li><strong>技術評估：</strong> 包含資料品質（完整性、一致性、標註準確性）、IT 基礎設施（伺服器、GPU 相容性）、AI 適配性（模型選型）。</li>
+        <li><strong>成本效益（ROI）評估：</strong> 確保專案具有合理的投資回報潛力。ROI 評估應**排除非 AI 直接成本**（如年終獎金、行政費），而應納入模型訓練、資料準備與雲端費用。</li>
+        <li><strong>PoC 的作用：</strong> 評估模型的準確度、延遲、可解釋性，以及與現有系統的整合難度。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在評估企業 AI 導入可行性時，下列哪一項屬於「商業價值評估」的考量？</p>
+        <p>（A）模型參數量大小 （B）開發人員數量 <strong>（C）預期效益與回報</strong> （D）演算法選擇難度</p>
+        <p class="text-detail"><strong>解析：</strong> 商業價值評估主要衡量 AI 專案在解決問題或創造價值上的潛力，例如降低成本、增加收入或提升效率。故選 (C)。</p>
+    </div>
+</div>
+
+<h3>1.2 導入規劃與跨部門協作（L21202）</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 1.2.1：組織成熟度與資源盤點</h4>
+    <p>AI 導入的根基在於**數位化與資料整備**。組織必須評估其數位成熟度、**資料治理能力**（如資料的正確性、可追溯性與權限控管）以及是否有預留的資金、人力或時間。</p>
+    <ul>
+        <li><strong>人力資源：</strong> AI 專案需要多種專業角色，如專案負責人、資料工程師、AI 模型開發者、系統架構師（負責 API 介接與部署方案）與測試工程師。</li>
+        <li><strong>硬體資源：</strong> 深度學習常需 <span class="tech-highlight"><strong>GPU 伺服器</strong></span> 進行加速訓練與推論。</li>
+    </ul>
+
+    <div class="analogy">
+        <p><strong>白話比喻：</strong> 資源盤點就像裝備檢查。如果資料這把「槍」是生鏽的，或你根本沒有子彈（預算），那麼 AI 這個「作戰計畫」就不可能成功。</p>
+    </div>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在 AI 導入專案的初期規劃階段，下列哪一項屬於「人員規劃」的重點內容？</p>
+        <p>（A）API 規格設計 （B）模型優化參數 <strong>（C）AI 專案所需的跨部門協作角色</strong> （D）作業系統版本</p>
+        <p class="text-detail"><strong>解析：</strong> 規劃階段需明確定義跨部門角色（如 IT、業務、法務），確保協作順暢。故選 (C)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.2.2：部署模式與技術選型</h4>
+    <p>AI 應用規劃師需根據組織條件與資源狀態，選擇最適合的導入模式。</p>
+    <ul>
+        <li><strong>現有商業服務（Low-code/No-code）：</strong> 適合技術門檻低、快速部署的企業。但**彈性與客製化有限**。</li>
+        <li><strong>地端私有部署（On-premise）：</strong> 適合考量**資料隱私**與**本地控制需求**（如金融、醫療、政府）的敏感領域。</li>
+        <li><strong>內部團隊開發：</strong> 適合具備技術人力與長期 AI 發展計畫的企業，能高度客製化。</li>
+    </ul>
+    <p class="text-detail"><strong>技術選型考量：</strong> 應強調考慮**組織技術熟悉度**與**維運便利性**，而非僅演算法精度。</p>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>當 AI 導入規劃需評估系統部署模式時，若考量資料隱私與本地控制需求，應優先考慮？</p>
+        <p>（A）第三方雲端部署 <strong>（B）地端私有部署</strong> （C）區塊鏈儲存方式 （D）外包給 AI 公司</p>
+        <p class="text-detail"><strong>解析：</strong> 地端部署可提供更強的資料控制與隱私保障，常見於金融、政府、醫療等敏感領域。故選 (B)。</p>
+    </div>
+</div>
+
+
+<h2>章節二：AI 技術部署與系統集成（L213, L21302）</h2>
+<p class="text-detail">AI 系統的部署不單是模型上線，而是一套涵蓋開發、測試、部署、監控、回訓與優化的完整技術流程（MLOps）。</p>
+
+<h3>2.1 MLOps 與系統集成</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 2.1.1：MLOps 核心流程</h4>
+    <p>MLOps（Machine Learning Operations）是實現 AI 模型的<strong>自動化開發、部署與持續維運流程</strong>。這是確保模型長期效能、版本管理和合規審核的關鍵。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>持續訓練（CT）/自動再訓練：</strong></span> 應設立資料監測機制，當資料漂移（Data Drift）超過門檻時，自動觸發模型的重新訓練。</li>
+        <li><span class="tech-highlight"><strong>系統集成：</strong></span> 模型必須被封裝為 **API**，才能與 ERP、CRM 等既有核心系統無縫整合。</li>
+        <li><span class="tech-highlight"><strong>容器化（Containerization）：</strong></span> 使用 Docker 等容器技術封裝模型，能促進模型**跨平台部署與環境一致性**。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若企業同時強調「AI 系統與 ERP 整合」與「模型需能持續更新」，最合適的導入方式是：</p>
+        <p>（A）單次模型訓練 （B）MLOps 流程 （C）傳統 BI 報表 （D）僅使用資料湖</p>
+        <p class="text-detail"><strong>解析：</strong> MLOps 提供版本管理、持續部署與監控，能確保「系統整合 + 模型持續更新」兩個條件。故選 (B)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.1.2：部署架構與即時推論</h4>
+    <p>部署架構需根據延遲要求進行選擇。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>邊緣運算（Edge Computing）：</strong></span> 將推論移至終端裝置本地端，適合需**即時決策**與**低延遲**的任務（如即時檢測產品瑕疵、自駕車）。通常需搭配**輕量化模型**（如 MobileNet）。</li>
+        <li><strong>系統集成測試：</strong> 部署前必須進行，核心是驗證模型服務與資料平台、前後端介面協同是否正常，**資料格式與流程一致性是否維持**。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某企業即將部署 AI 模型至現有營運系統，進入系統整合測試階段。測試工程師最應優先執行的驗證是：</p>
+        <p>（A）確認模型在開發機上訓練集表現是否達標 <strong>（B）驗證模型服務與資料平台、前後端介面協同是否正常，資料格式與流程一致性是否維持</strong> （C）檢查開發團隊提交程式碼時是否有依照 Git commit message 規範 （D）審閱模型報告與 API 文件的格式是否符合交付標準</p>
+        <p class="text-detail"><strong>解析：</strong> 系統集成測試的核心是確保 AI 模組能與企業現有系統無縫接軌，驗證資料流的連貫性與格式一致性是首要任務。故選 (B)。</p>
+    </div>
+</div>
+
+<h3>2.2 模型加速與優化策略</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 2.2.1：模型壓縮技術</h4>
+    <p>為將模型部署至資源受限的環境（如邊緣設備），必須使用模型壓縮技術。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>參數剪枝（Pruning）：</strong></span> 移除模型中對貢獻度較低的權重或神經元，以**減少記憶體使用**。</li>
+        <li><span class="tech-highlight"><strong>知識蒸餾（Knowledge Distillation）：</strong></span> 讓一個**輕量化的小模型（學生）**去學習一個**大型複雜模型（教師）**的輸出，以**保持精度**，同時降低計算成本。</li>
+        <li><span class="tech-highlight"><strong>模型量化（Quantization）：</strong></span> 將模型權重從 32 位浮點數降低到 8 位整數，大幅降低記憶體與運算需求。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若企業希望「減少模型壓縮造成的精度損失」與「同時降低部署成本」，應選擇：</p>
+        <p><strong>（A）模型量化 (Quantization) + 知識蒸餾 (Knowledge Distillation)</strong> （B）單純使用黑箱大型模型 （C）只進行剪枝 (Pruning) （D）僅依賴硬體升級</p>
+        <p class="text-detail"><strong>解析：</strong> 量化降低成本，知識蒸餾維持精度，符合「精度維持 + 成本降低」的雙重需求。故選 (A)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.2.2：持續監控與數據漂移</h4>
+    <p>持續監控是 MLOps 的核心功能。模型效能會隨時間衰退，可能因為資料分佈發生變化（<span class="risk-point"><strong>資料漂移 Data Drift</strong></span>） 或環境變化所致。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>監控項目：</strong></span> 模型效能（Accuracy, F1-score）、輸入資料分佈、服務延遲與計算資源消耗。</li>
+        <li><span class="tech-highlight"><strong>審計追蹤（Audit Trail）：</strong></span> 記錄模型的決策過程與資料來源，是滿足法規合規性審核（如 AI Act）的重要手段。</li>
+        <li><strong>Python 工具：</strong> <span class="tech-highlight">Scipy.stats</span> 可用於統計檢定，追蹤資料分佈的變化。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>AI 模型部署後，若長期輸入資料分佈逐漸改變，導致模型效能下降，最適合採取下列哪一項作法進行風險管理？</p>
+        <p>（A）定期重啟伺服器以排除效能問題 （B）加入多個冗餘模型以進行同時預測 <strong>（C）建置概念漂移監控與觸發模型再訓練流程</strong> （D）縮減模型層數以降低計算成本</p>
+        <p class="text-detail"><strong>解析：</strong> 資料漂移需透過監控並觸發自動再訓練（Auto-Retraining）來維持效能。故選 (C)。</p>
+    </div>
+</div>
+
+
+<h2>章節三：機器學習治理與風險管理（L234, L21203）</h2>
+<p class="text-detail">機器學習治理的目的在於系統性控管資料與模型風險，確保 AI 應用在合法、安全、公平的原則下運作。風險管理應成為 AI 導入流程中的一個前瞻性和持續性機制。</p>
+
+<h3>3.1 數據隱私、安全與合規（L23401）</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 3.1.1：隱私保護技術與法規</h4>
+    <p>企業在 AI 應用中需面對如 <span class="tech-highlight"><strong>GDPR</strong></span>（歐盟）和台灣《個人資料保護法》等法規挑戰。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>Zero-Retention 模式：</strong></span> 針對第三方 API（如 GPT）設計的資料保護機制。保證輸入資料**不被儲存、不被用於模型訓練**。</li>
+        <li><span class="tech-highlight"><strong>聯邦學習（Federated Learning）：</strong></span> 允許在多個本地裝置或伺服器上訓練模型，而**數據不離開本地**，降低資料外洩風險。</li>
+        <li><span class="tech-highlight"><strong>零信任架構（Zero Trust）：</strong></span> 假設所有使用者和設備都不可信，強調**永不信任，始終驗證**。</li>
+        <li><strong>差分隱私（Differential Privacy）：</strong> 向資料中加入隨機噪聲，使得單一資料紀錄的變動對整體分析結果的影響極小，以保護個資。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在隱私敏感的醫療數據場景下，若同時需要「保護患者個資」與「仍能進行 AI 訓練」，最佳技術是：</p>
+        <p><strong>（A）差分隱私 + 聯邦學習 (Federated Learning)</strong> （B）全部刪除敏感欄位 （C）將數據加密後不允許存取 （D）將數據外包第三方</p>
+        <p class="text-detail"><strong>解析：</strong> 差分隱私保護個資，聯邦學習允許數據不離開本地也能訓練模型，符合雙重條件。故選 (A)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 3.1.2：AI 侵權與供應鏈風險</h4>
+    <p>AI 系統的風險不僅限於內部，還涉及外部依賴性與法規風險。</p>
+    <ul>
+        <li><span class="risk-point"><strong>侵權與版權風險：</strong></span> 生成式 AI 內容可能侵犯第三方版權或專利，企業需對生成的內容進行謹慎的審查與調整。</li>
+        <li><span class="risk-point"><strong>供應鏈攻擊（Supply Chain Attacks）：</strong></span> AI 系統依賴的第三方開源模型或數據可能被植入惡意內容，造成資安威脅。</li>
+        <li><span class="tech-highlight"><strong>合規要求：</strong></span> 歐盟 AI Act 將 AI 系統分為四個風險等級，其中高風險系統（如醫療診斷、招聘系統）需受到嚴格監管。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>供應鏈攻擊（Supply Chain Attacks）如何影響企業內部 AI 系統安全？</p>
+        <p>（A）供應鏈攻擊的常見狀況，包括員工因釣魚郵件而被盜取帳號密碼； <strong>（B）AI 系統依賴的第三方開源模型或數據可能被植入惡意內容；</strong> （C）AI 系統只會受到 DDoS 攻擊影響，不會有供應鏈風險； （D）供應鏈攻擊僅影響硬體層級、不影響 AI 模型</p>
+        <p class="text-detail"><strong>解析：</strong> 供應鏈攻擊的風險在於第三方模型或數據源被污染。故選 (B)。</p>
+    </div>
+</div>
+
+<h3>3.2 演算法偏見與公平性（L23402, L21203）</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 3.2.1：偏見來源與責任 AI</h4>
+    <p>AI 偏見（Bias）並非單純技術瑕疵，而是涉及社會公平、法律合規與倫理責任的多面向議題。</p>
+    <ul>
+        <li><span class="risk-point"><strong>資料偏見（Data Bias）：</strong></span> 訓練語料若存在標註錯誤、不一致，或樣本偏斜（如偏向特定語言或種族），將導致模型學習偏誤。</li>
+        <li><span class="risk-point"><strong>模型偏見（Model Bias）：</strong></span> 即使資料相對平衡，模型仍可能因演算法設計而放大偏見（例如，推薦系統可能邊緣化少數群體的需求）。</li>
+        <li><span class="tech-highlight"><strong>負責任 AI（Responsible AI）：</strong></span> 強調在 AI 系統的整個生命週期中，**開發者對 AI 系統的行為負主要責任**。核心原則包括透明性、公平性、問責制。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>關於「負責任的 AI」，下列敘述何者較為正確？</p>
+        <p><strong>（A）AI 系統的開發者對 AI 系統的行為負責</strong> （B）AI 系統的使用者對 AI 系統的結果負責 （C）AI 系統本身對其行為負責 （D）政府對 AI 系統的發展負責</p>
+        <p class="text-detail"><strong>解析：</strong> 負責任 AI 強調開發者承擔主要責任，因使用者通常缺乏技術知識來評估系統風險。故選 (A)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 3.2.2：公平性修正與 XAI</h4>
+    <p>為降低偏見風險並提升信任度，AI 系統必須具備透明度與可解釋性。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>公平性測試：</strong></span> 使用 <span class="tech-highlight">WEAT</span> 或 <span class="tech-highlight">IBM AI Fairness 360 (AIF360)</span>。</li>
+        <li><span class="tech-highlight"><strong>XAI（可解釋性 AI）：</strong></span> 讓使用者理解模型如何做出預測或決策的技術方法。應用於金融風控、醫療診斷等高風險情境。</li>
+        <li><span class="tech-highlight"><strong>修正方法：</strong></span> 對抗式去偏模型、結果門檻調整（調整不同群體間的預測閾值）。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若醫療 AI 系統同時需要「確保演算法公平性」與「避免黑箱問題影響臨床信任」，最佳方案是：</p>
+        <p>（A）黑箱深度學習模型 <strong>（B）模型解釋工具 (SHAP/LIME) + 公平性測試</strong> （C）僅依靠人工醫師判斷 （D）將數據外包給第三方</p>
+        <p class="text-detail"><strong>解析：</strong> 醫療高風險領域必須兼顧「公平性 + 可解釋性」，模型解釋工具（如 SHAP/LIME）屬於 XAI 技術。故選 (B)。</p>
+    </div>
+</div>
+
+<h3>3.3 生成式 AI 風險與安全機制（L21103 風險）</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 3.3.1：模型幻覺與內容風險</h4>
+    <p>生成式 AI 具有強大的內容生成能力，但也伴隨著極高的風險。</p>
+    <ul>
+        <li><span class="risk-point"><strong>幻覺（Hallucination）：</strong></span> 指模型產生**看似合理，但實際是錯誤、捏造或無法查證**的資訊的現象（例如虛構法規條文）。這是生成式 AI 領域中最重要且最具挑戰性的問題之一。</li>
+        <li><strong>應對：</strong> 由於幻覺是 LLM 的固有特性，企業必須加入**事實檢查機制**與**人工審核**。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某 AI 助理在回覆客戶時，產生了「本公司已於 2025 年推出您所查詢的產品，該產品具備獨特的 XX 技術」的回應，但經查證該產品與技術並不存在。造成此現象最可能的原因為：</p>
+        <p>（A）提詞詞過度簡略 <strong>（B）模型幻覺（Hallucination）</strong> （C）系統運行中斷 （D）運算資源不足</p>
+        <p class="text-detail"><strong>解析：</strong> 生成看似流暢專業但實屬虛構的內容是模型幻覺的典型特徵。故選 (B)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 3.3.2：安全防護與治理框架</h4>
+    <p>生成式 AI 的安全性需透過系統化的治理框架與技術防護機制來保障。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>Guardrails 安全護欄：</strong></span> 限制不當或違規輸出內容，確保 AI 遵守倫理與法規。</li>
+        <li><span class="tech-highlight"><strong>提示攻擊（Prompt Injection）：</strong></span> 外部惡意輸入試圖繞過安全防護，或竊取底層數據。應對機制是建立**輸入/輸出安全過濾機制**。</li>
+        <li><span class="tech-highlight"><strong>AI 治理框架（Governance）：</strong></span> 確保 AI 應用的透明性、公平性與責任制。例如，同時面對 CBAM（碳排放）與 AI Act 規範時，需建立 AI 治理框架 + 碳足跡數據平台。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若 AI 系統需同時「確保輸出內容合乎倫理規範」與「避免提示攻擊（Prompt Injection）」風險，最適合的方案是：</p>
+        <p>（A）僅依靠黑箱大型語言模型 <strong>（B）建立 AI 治理框架 + 安全防護機制 (輸入/輸出過濾)</strong> （C）完全關閉生成式 AI （D）將審核外包給第三方</p>
+        <p class="text-detail"><strong>解析：</strong> AI 治理框架能規範倫理標準，輸入/輸出過濾能抵禦提示攻擊。故選 (B)。</p>
+    </div>
+</div>
+
+</body>
+</html>
+```

@@ -1,0 +1,342 @@
+好的，這是一份針對「AI應用規劃師中級學習路徑」中，**階段二：機器學習建模與優化實務 (L233)** 的超詳細圖卡式 HTML 講義。
+
+本階段專注於**數據準備、模型訓練、優化與壓縮**等實戰流程，是將 AI 理論轉化為實際應用價值的關鍵環節。
+
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>AI應用規劃師（中級）階段二：機器學習建模與優化實務</title>
+    <style>
+        /* 整體佈局與字體設定 */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.8; 
+            color: #333; 
+            margin: 20px auto; 
+            max-width: 1200px; 
+            background-color: #f4f7f6;
+        }
+
+        /* 標題樣式 */
+        h1 { 
+            color: #004d99; 
+            border-bottom: 4px solid #004d99; 
+            padding-bottom: 15px; 
+            font-size: 2.2em; 
+            font-weight: 700; 
+        }
+        h2 { 
+            color: #cc3300; 
+            border-left: 8px solid #ffaa00; 
+            padding-left: 15px; 
+            background-color: #fff8e1; 
+            font-size: 1.8em; 
+            margin-top: 30px; 
+        }
+        h3 { 
+            color: #00796b; 
+            border-bottom: 2px dashed #b3e0ff; 
+            padding-bottom: 5px; 
+            font-size: 1.4em; 
+            font-weight: 600; 
+            margin-top: 25px;
+        }
+        h4 { 
+            color: #333; 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            margin-top: 15px;
+        }
+
+        /* 知識點圖卡容器 */
+        .knowledge-point { 
+            margin-top: 20px; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .knowledge-point:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        /* 白話比喻樣式 */
+        .analogy { 
+            font-style: italic; 
+            color: #00796b; 
+            padding: 10px 15px; 
+            background-color: #e8f5e9;
+            border-left: 4px solid #00c853;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        /* 公式區塊 */
+        .formula { 
+            background-color: #f0f0f0; 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin: 20px 0; 
+            overflow-x: auto;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* 應用題情境樣式 */
+        .application-scenario { 
+            background-color: #e6f7ff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 25px 0; 
+            border: 2px solid #b3e0ff;
+        }
+        .application-scenario strong { 
+            color: #004d99; 
+            font-size: 1.1em; 
+            font-weight: 700; 
+        }
+        .application-scenario p {
+            font-size: 1em;
+        }
+
+        /* 內容字體強調 */
+        strong { font-weight: bold; color: #004d99; }
+        .text-detail { font-size: 0.95em; color: #555; }
+        .tech-highlight { color: #ff5722; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>AI 應用規劃師（中級）學習路徑：階段二詳細講義</h1>
+<p class="text-detail">此階段（L233）涵蓋了從數據到實際可部署模型的完整流程，要求具備建構、訓練與調校模型的能力，這是將理論知識轉化為實際 AI 產品的關鍵。</p>
+
+<h2>章節一：數據準備與特徵工程（L23301, L21301）</h2>
+<p class="text-detail">數據準備是模型性能的基石。此步驟涉及數據收集、清理（如缺失值處理）、特徵工程（如轉換與縮放）、以及資料增強（Data Augmentation）。</p>
+
+<h3>1.1 資料清理與特徵縮放</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 1.1.1：特徵縮放（Feature Scaling）與標準化</h4>
+    <p>當特徵尺度差異極大時（例如：年齡 0–100、收入 0–1,000,000），容易導致模型偏向尺度較大的特徵。特徵縮放（Normalization, Standardization）是必須的步驟，使模型訓練過程更快、更穩定。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>標準化（Standardization / Z-score）</strong></span>：將數值轉換為<strong>平均數為 0、標準差為 1</strong> 的分佈。這對於需要計算梯度的模型（如線性迴歸、神經網路）特別有效。</li>
+        <li><span class="tech-highlight"><strong>正規化（Normalization / Min-Max）</strong></span>：將數值轉換至 <span class="tech-highlight">0 到 1 之間</span>。</li>
+    </ul>
+    
+    <p><strong>Z-score 標準化公式：</strong></p>
+    <div class="formula">
+        $$Z = \frac{X - \mu}{\sigma}$$
+        <p class="text-detail">其中 $X$ 是原始數值，$\mu$ 是平均數，$\sigma$ 是標準差。</p>
+    </div>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在訓練模型時，若數據中出現特徵尺度差異極大（例如：年齡為 0–100、收入為 0–1,000,000），容易導致模型偏向特定特徵。為提升模型效能與穩定性，以下哪一種預處理方式最能有效解決此問題？</p>
+        <p>（A）移除尺度較小的欄位 <strong>（B）對所有特徵進行 Z-score 標準化（Standardization）</strong> （C）將特徵縮放至 0 – 1 區間進行最大-最小正規化 <strong>（D）選項 (B) 或 (C) 皆可，重點在於縮放特徵至相同尺度</strong></p>
+        <p class="text-detail"><strong>解析：</strong> 特徵縮放（標準化或正規化）是解決特徵尺度差異導致的模型偏誤的有效方法。故選 (B) 或 (C)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.1.2：缺失值處理與資料轉換</h4>
+    <p>缺失值（Missing Values）處理是資料清理的關鍵步驟。</p>
+    <ul>
+        <li><strong>缺失值插補（Imputation）：</strong> 常見方法包括：使用<strong>平均數 / 中位數填補</strong>、前後值填補、插值法。在存在離群值的情況下，中位數填補比平均數更穩健。</li>
+        <li><strong>資料轉換：</strong> 當資料呈現**偏態分佈**時，常需進行對數轉換（Log Transform）以降低偏態，使資料更接近常態分佈。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在數據前處理中，若同時需要「解決缺失值問題」與「避免模型偏差」，最合適的方法是：</p>
+        <p>（A）直接刪除所有缺失值 <strong>（B）使用均值填補 + 驗證模型效能</strong> （C）隨機補值不檢查結果 （D）完全忽略缺失值</p>
+        <p class="text-detail"><strong>解析：</strong> 刪除數據會丟失資訊，而均值填補（或中位數填補）可以維持數據完整性，但需透過驗證避免偏差，故選 (B)。</p>
+    </div>
+</div>
+
+<h3>1.2 特徵編碼、選擇與降維</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 1.2.1：類別編碼與特徵維度爆炸</h4>
+    <p>模型無法直接處理類別標籤，必須將其轉換為數值向量。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>獨熱編碼（One-hot Encoding）：</strong></span> 將類別轉為二進位欄位，適用於<strong>無序分類變數</strong>。</li>
+        <li><span class="tech-highlight"><strong>限制：</strong></span> 若類別數過多，會導致<strong>特徵維度爆炸</strong>（Curse of Dimensionality），增加記憶體使用與模型訓練的負擔。</li>
+    </ul>
+    <p class="text-detail"><strong>特徵工程的目標：</strong> 透過轉換、組合、抽取等方式，將原始數據轉化為更能被模型學習的特徵，例如從時間戳中擷取週期性特徵（如星期幾、時段）。</p>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在處理包含數百種產品類別的電商交易數據時，若採用 One-hot Encoding 對「產品類別」進行編碼，會帶來的主要問題是：</p>
+        <p>（A）訓練時間縮短 （B）模型泛化能力提升 <strong>（C）特徵維度爆炸，增加記憶體使用與計算負擔</strong> （D）特徵之間關聯性增加</p>
+        <p class="text-detail"><strong>解析：</strong> One-hot Encoding 在類別數量多時會導致維度爆炸，增加負擔。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.2.2：降維與特徵選擇</h4>
+    <p><strong>特徵選擇（Feature Selection）</strong>旨在移除冗餘或不相關的特徵，簡化模型並提升效能。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>Lasso (L1) 正則化：</strong></span> 屬於**嵌入法（Embedded Method）**，能夠將不重要特徵的權重設為零，實現**特徵選擇**。</li>
+        <li><span class="tech-highlight"><strong>主成分分析（PCA）：</strong></span> 降維技術，透過找出一組能最大化資料變異量的正交向量基底。主要用途為**降維、去除共線性**。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若分析師同時需要「找出高維度數據中主要特徵」與「減少運算複雜度」，最合適的方法是：</p>
+        <p><strong>（A）PCA</strong> （B）t-SNE （C）聚類分析 （D）Z 分數標準化</p>
+        <p class="text-detail"><strong>解析：</strong> PCA 透過主成分找出最大變異方向，能達到「特徵提取 + 降低維度」的目的。</p>
+    </div>
+</div>
+
+
+<h2>章節二：模型訓練與評估實務（L23302, L23303）</h2>
+<p class="text-detail">模型訓練是將資料轉化為可執行 AI 系統的核心過程。模型選擇應考慮準確性、可部署性與開發成本。</p>
+
+<h3>2.1 模型選擇、驗證與防過擬合</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 2.1.1：模型選擇與自動化趨勢</h4>
+    <p>AI 規劃師需根據任務輸出型態（分類或迴歸）、資料特徵與業務目標選擇合適的模型。業界趨勢是**越來越多地採用自動化機器學習（AutoML）技術**，用於特徵生成、選擇與模型建構。</p>
+    
+    <div class="analogy">
+        <p><strong>白話比喻：</strong> 選擇模型就像選擇交通工具。短距離、高解釋性需求（如醫療）可能選腳踏車（決策樹/貝氏模型），而長距離、高複雜性（如圖像/NLP）則選飛機（深度學習）。AutoML 則像是自動駕駛系統，能幫你選最佳路線和車型。</p>
+    </div>
+    
+    <p class="text-detail"><strong>深度學習的優勢：</strong> 適合處理影像、語音等非結構化資料，以及特徵具高度非線性的情況。</p>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>下列何者為機器學習模型在業界部署的主要趨勢？</p>
+        <p><strong>（A）越來越多地採用自動化機器學習（AutoML）技術</strong> （B）轉向使用更簡單的機器學習算法 （C）基於雲的機器學習平台的使用率下降 （D）依賴手動超參數調整進行模型優化</p>
+        <p class="text-detail"><strong>解析：</strong> AutoML 是業界主流趨勢，能自動進行特徵工程與模型建構，降低門檻。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.1.2：交叉驗證與過擬合防範</h4>
+    <p>模型若**過度學習訓練資料中的雜訊**，會導致**過擬合（Overfitting）**，使泛化能力下降。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>交叉驗證（Cross-Validation）：</strong></span> 評估模型性能和<strong>防止過擬合</strong>的重要技術。</li>
+        <li><span class="tech-highlight"><strong>正則化（Regularization）：</strong></span> L1/L2 正則化透過加入懲罰項，**降低模型過擬合風險**。</li>
+        <li><span class="tech-highlight"><strong>Dropout：</strong></span> 在訓練時隨機將部分神經元暫時關閉，以減少過擬合。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>當模型的訓練誤差低、但測試誤差很大時，這通常是在訓練過程中產生下列哪一種情況？</p>
+        <p>（A）模型的泛化能力強 <strong>（B）模型出現過度擬合（Overfitting）</strong> （C）模型出現欠擬合 （D）訓練資料和測試資料之間沒有相關性</p>
+        <p class="text-detail"><strong>解析：</strong> 訓練誤差低但測試誤差大是過擬合的典型特徵。</p>
+    </div>
+</div>
+
+<h3>2.2 模型訓練與評估指標</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 2.2.1：模型評估指標</h4>
+    <p>單一評估指標往往無法全面呈現模型效能與偏誤風險。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>分類任務：</strong></span> 常用 **Accuracy（準確率）**、<span class="tech-highlight">Precision（精確率）</span>、<span class="tech-highlight">Recall（召回率）</span>、<span class="tech-highlight">F1-score</span>，以及 <span class="tech-highlight"><strong>ROC/AUC</strong></span>。</li>
+        <li><span class="tech-highlight"><strong>ROC 曲線：</strong></span> 描述 **TPR（真陽性率）與 FPR（假陽性率）** 的變化。</li>
+        <li><strong>迴歸任務：</strong> 常用 $R^2$、MSE、RMSE 等。</li>
+    </ul>
+    
+    <p><strong>準確率（Accuracy）公式：</strong></p>
+    <div class="formula">
+        $$Accuracy = \frac{TP + TN}{TP + TN + FP + FN}$$
+        <p class="text-detail">其中 TP, TN, FP, FN 分別代表真陽性、真陰性、假陽性、假陰性。</p>
+    </div>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在處理信用卡詐欺偵測這種**不平衡資料**的分類問題時，如果只使用準確率（Accuracy）來評估模型，可能導致的風險是：</p>
+        <p>（A）模型過度擬合訓練集 <strong>（B）高估模型性能，因模型可能只將所有樣本分類為多數類別（正常交易）</strong> （C）無法進行特徵縮放 （D）模型訓練速度過慢</p>
+        <p class="text-detail"><strong>解析：</strong> 在不平衡資料中，即使模型將所有少數類別（詐欺）都判錯，Accuracy 仍可能很高，因此會高估性能。應使用 F1-score 或 AUC 等指標。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.2.2：類別不平衡處理與評估策略</h4>
+    <p>面對高度不平衡資料（如欺詐偵測、醫療診斷），傳統準確率常導致誤判。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>過採樣（Over-sampling）：</strong></span> 如 **SMOTE**（Synthetic Minority Over-sampling Technique），透過合成新樣本方式平衡資料分佈，適用於少數類別。</li>
+        <li><span class="tech-highlight"><strong>類別重加權（Class Weighting）：</strong></span> 在模型訓練時對少數類別賦予更高權重，強化模型對其的學習能力。</li>
+        <li><span class="tech-highlight"><strong>評估指標選擇：</strong></span> 處理不平衡資料時，應使用 AUC 評估較佳，或 F1-score。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某電商公司在建立「顧客流失預測模型」時，發現準確率高達 95%，但實際應用時卻錯誤率很高。他們同時需要「避免模型只偏向多數類別」與「提升少數類別偵測能力」，最佳方法是：</p>
+        <p><strong>（A）使用 SMOTE 等過採樣技術 + F1-score 評估</strong> （B）僅依靠 Accuracy 當指標 （C）減少特徵數量並重新訓練 （D）完全刪除少數類別樣本</p>
+        <p class="text-detail"><strong>解析：</strong> 流失預測是**不平衡分類問題**，SMOTE 可強化少數類別樣本，F1-score 能平衡 Precision/Recall，符合雙重條件。</p>
+    </div>
+</div>
+
+
+<h2>章節三：模型優化與壓縮部署（L23304, L21302）</h2>
+<p class="text-detail">將模型部署至實際應用環境時，必須優化模型體積與效能，以滿足邊緣運算、即時推論（Real-time Inference） 與成本控制需求。</p>
+
+<h3>3.1 模型優化與超參數調校</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 3.1.1：超參數調校與早停</h4>
+    <p>模型效能高度依賴於超參數（Hyperparameters）的選擇。調校策略應平衡**準確率最大化**與**運算成本控制**。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>早停法（Early Stopping）：</strong></span> 監控模型在驗證集上的性能，當性能不再提升時停止訓練。早停是避免過度訓練、**節省運算資源**的有效方法。</li>
+        <li><strong>調校方法：</strong> 隨機搜尋（Random Search）比全面網格搜尋（Grid Search）效率更高，更適合**避免過度耗費運算資源**。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某醫療 AI 系統需要「最佳化超參數」與「避免過度耗費運算資源」，最佳做法是：</p>
+        <p><strong>（A）隨機搜尋 (Random Search) + 早停 (Early Stopping)</strong> （B）全面網格搜尋 (Grid Search) （C）不調整任何超參數 （D）使用暴力窮舉法測試所有組合</p>
+        <p class="text-detail"><strong>解析：</strong> 隨機搜尋比網格搜尋效率高，早停可避免過度訓練，符合「調參 + 資源控制」雙重條件。</p>
+    </div>
+</div>
+
+<h3>3.2 模型壓縮技術（Model Compression）</h3>
+<p class="text-detail">模型壓縮與加速技術旨在有效減少模型的大小與計算需求，同時盡可能維持原有的預測精準度。這是生成式 AI 導入中可選擇的技術。</p>
+
+<div class="knowledge-point">
+    <h4>知識點 3.2.1：參數剪枝與知識蒸餾</h4>
+    <p>深度學習模型體積龐大，部署至資源受限環境（如邊緣設備）時需進行壓縮。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>參數剪枝（Parameter Pruning）：</strong></span> 移除對模型貢獻度較低的權重或神經元，以**減少記憶體使用**。</li>
+        <li><span class="tech-highlight"><strong>知識蒸餾（Knowledge Distillation）：</strong></span> 讓一個較小、計算效率更高的**學生模型**，去學習一個大型且精準的**教師模型**的輸出，從而**減少模型壓縮造成的精度損失**。</li>
+        <li><span class="tech-highlight"><strong>模型量化（Quantization）：</strong></span> 將權重和激活值的浮點數精度（如 32 位元）降低（如 8 位元），以加速推論並縮小模型體積。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若 AI 模型需同時「減少運算成本」與「保持診斷精度」，最佳技術組合是：</p>
+        <p><strong>（A）模型剪枝 (Pruning) + 知識蒸餾 (Knowledge Distillation)</strong> （B）單純使用更大模型以增加準確率 （C）移除所有少數族群數據以簡化訓練 （D）僅依靠硬體升級提升 GPU 數量</p>
+        <p class="text-detail"><strong>解析：</strong> 剪枝減少冗餘參數（降低成本），蒸餾讓小模型學習大模型精華（保持精度）。</p>
+    </div>
+</div>
+
+<h3>3.3 模型部署實務（L21302 部署角度）</h3>
+<p class="text-detail">模型部署不單是模型上線，而是建立在組織內部各部門協作 與持續維運的基礎上。</p>
+
+<div class="knowledge-point">
+    <h4>知識點 3.3.1：持續維運與 MLOps</h4>
+    <p>模型訓練結果可能會隨資料變化而失效（模型漂移），因此模型須具備彈性更新與及時監控能力。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>MLOps 流程：</strong></span> 實現 AI 模型的<strong>自動化開發、部署與持續維運流程</strong>。能確保模型持續訓練與版本管理。</li>
+        <li><span class="tech-highlight"><strong>系統集成：</strong></span> 須封裝為 **API**，以與 ERP、CRM 等既有核心系統無縫整合。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若企業同時強調「AI 系統與 ERP 整合」與「模型需能持續更新」，最合適的導入方式是：</p>
+        <p>（A）單次模型訓練 （B）MLOps 流程 （C）傳統 BI 報表 （D）僅使用資料湖</p>
+        <p class="text-detail"><strong>解析：</strong> MLOps 提供版本管理、持續部署與監控，能確保「系統整合 + 模型持續更新」兩個條件。</p>
+    </div>
+</div>
+
+</body>
+</html>
+```

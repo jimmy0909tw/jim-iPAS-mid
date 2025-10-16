@@ -1,0 +1,379 @@
+這是一份針對「AI應用規劃師中級學習路徑」中，**階段三：AI 專門技術應用與整合 (L211)** 的核心知識點，以圖卡方式呈現的超詳細 HTML 格式講義。
+
+本階段要求考生**熟悉 AI 相關技術框架**，並掌握 NLP、CV、生成式 AI 和多模態 AI 在實務應用中的核心原理、技術細節與潛在風險。
+
+---
+
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>AI應用規劃師（中級）階段三：AI 專門技術應用與整合</title>
+    <style>
+        /* 整體佈局與字體設定 */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.8; 
+            color: #333; 
+            margin: 20px auto; 
+            max-width: 1200px; 
+            background-color: #f4f7f6;
+        }
+
+        /* 標題樣式 */
+        h1 { 
+            color: #004d99; 
+            border-bottom: 4px solid #004d99; 
+            padding-bottom: 15px; 
+            font-size: 2.2em; 
+            font-weight: 700; 
+        }
+        h2 { 
+            color: #cc3300; 
+            border-left: 8px solid #ffaa00; 
+            padding-left: 15px; 
+            background-color: #fff8e1; 
+            font-size: 1.8em; 
+            margin-top: 30px; 
+        }
+        h3 { 
+            color: #00796b; 
+            border-bottom: 2px dashed #b3e0ff; 
+            padding-bottom: 5px; 
+            font-size: 1.4em; 
+            font-weight: 600; 
+            margin-top: 25px;
+        }
+        h4 { 
+            color: #333; 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            margin-top: 15px;
+        }
+
+        /* 知識點圖卡容器 */
+        .knowledge-point { 
+            margin-top: 20px; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .knowledge-point:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        /* 白話比喻樣式 */
+        .analogy { 
+            font-style: italic; 
+            color: #00796b; 
+            padding: 10px 15px; 
+            background-color: #e8f5e9;
+            border-left: 4px solid #00c853;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        /* 公式區塊 */
+        .formula { 
+            background-color: #f0f0f0; 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin: 20px 0; 
+            overflow-x: auto;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* 應用題情境樣式 */
+        .application-scenario { 
+            background-color: #e6f7ff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 25px 0; 
+            border: 2px solid #b3e0ff;
+        }
+        .application-scenario strong { 
+            color: #004d99; 
+            font-size: 1.1em; 
+            font-weight: 700; 
+        }
+        .application-scenario p {
+            font-size: 1em;
+        }
+
+        /* 內容字體強調 */
+        strong { font-weight: bold; color: #004d99; }
+        .text-detail { font-size: 0.95em; color: #555; }
+        .tech-highlight { color: #ff5722; font-weight: bold; }
+        .risk-point { color: #d32f2f; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>AI 應用規劃師（中級）學習路徑：階段三詳細講義</h1>
+<p class="text-detail">此階段（L211）將學習範圍擴展到特定 AI 領域的應用技術，要求考生<strong>熟悉 AI 相關技術框架</strong>，掌握 NLP、CV、生成式 AI 和多模態 AI 的核心原理與實務應用。</p>
+
+<h2>章節一：自然語言處理技術與應用（NLP, L21101）</h2>
+<p class="text-detail">自然語言處理（NLP）旨在使機器能夠理解、解釋並生成人類語言。它已從簡單的語言分析進階到複雜的語意理解，是智慧客服、聊天機器人與內容生成的核心。</p>
+
+<h3>1.1 文本前處理與詞彙表示</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 1.1.1：斷詞與詞嵌入（Word Embeddings）</h4>
+    <p>在 NLP 任務之前，高品質的資料前處理是不可或缺的環節。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>斷詞（Tokenization）</strong></span>：將接續的文本轉換為詞彙單位。</li>
+        <li><span class="tech-highlight"><strong>詞嵌入（Word Embeddings）</strong></span>：將語意相近的詞彙映射到向量空間中相近的位置。<span class="tech-highlight">Word2Vec</span> 是經典的詞嵌入技術。</li>
+        <li><strong>Bag of Words (BoW)：</strong> 將文本視為一組單獨詞彙，不考慮詞彙的順序和語法結構，僅計算詞頻。</li>
+        <li><strong>限制：</strong> BoW 忽略語意關聯與上下文資訊，對於詞彙量大的語料庫會導致<strong>維度爆炸</strong>。</li>
+    </ul>
+
+    <div class="analogy">
+        <p><strong>白話比喻：</strong> 詞嵌入就像給每個詞語一張「身份證」，上面記錄了它與其他詞語的關係向量。如果「國王」減去「男人」加上「女人」，會得到「皇后」的向量，這證明了向量可以運算語意關係。</p>
+    </div>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在一個包含數萬個專業術語的醫學文本數據集中，若使用 <span class="tech-highlight">Bag of Words (BoW)</span> 模型來表示文本特徵，最可能導致哪種問題？</p>
+        <p>（A）模型訓練速度加快 <strong>（B）特徵維度爆炸與資料稀疏性問題</strong> （C）詞彙順序信息被保留 （D）模型能捕捉到詞彙間的語意關係</p>
+        <p class="text-detail"><strong>解析：</strong> BoW 的向量維度是語料庫中所有詞彙的數量，詞彙量大會導致維度爆炸和稀疏性問題。</p>
+    </div>
+</div>
+
+<h3>1.2 現代 NLP 架構與核心應用</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 1.2.1：Transformer 架構與預訓練模型</h4>
+    <p>預訓練語言模型（如 BERT、GPT）的出現，使 NLP 技術從過去專注於特定任務，發展為具備更高普遍性、泛化性與可擴展性的語言理解能力。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>Transformer</strong></span>：核心是<strong>自注意力機制（Self-Attention）</strong>，允許模型在處理每個詞時，考慮到序列中所有其他詞的影響，實現了<strong>長距依賴關係的建模</strong>，並能大幅提升訓練過程的並行性。</li>
+        <li><span class="tech-highlight"><strong>BERT</strong></span>：第一個基於 Transformer 架構的**雙向預訓練模型**，利用遮蔽語言建模（MLM），能夠進行雙向上上下文的理解，顯著提升語言理解的精準度。</li>
+        <li><span class="tech-highlight"><strong>GPT</strong></span>：使用<strong>自迴歸生成方式</strong>，強調文本生成能力，適用於生成型任務。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某企業要開發一個客服系統，要求「大規模並行處理用戶文本查詢」與「理解長文本中的語意關係」，最適合的核心技術架構是：</p>
+        <p>（A）傳統 RNN 模型 （B）樸素貝式分類器 <strong>（C）Transformer 架構</strong> （D）線性迴歸</p>
+        <p class="text-detail"><strong>解析：</strong> Transformer 支援並行運算，且透過自注意力機制有效處理長距離依賴，適合大規模客服系統。故選 (C)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.2.2：NLP 核心應用與 NER</h4>
+    <p>NLP 技術涵蓋文本分類、情感分析、對話系統與命名實體辨識（NER）等。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>命名實體辨識（NER）</strong></span>：NLP 的一項核心任務，從文本中定位並分類預先定義好的具名實體，如人名、地名、組織名。</li>
+        <li><strong>情感分析：</strong> 分析社群媒體輿情監控和顧客滿意度調查，能迅速、有效地處理大量文本，幫助企業調整行銷策略或提高顧客服務水平。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某金融機構使用 AI 分析新聞報導以自動識別「股票代碼、公司名稱和相關國家/地區」，這項任務屬於 NLP 中的哪一類核心應用？</p>
+        <p>（A）情感分析 <strong>（B）命名實體辨識（NER）</strong> （C）機器翻譯 （D）詞形還原</p>
+        <p class="text-detail"><strong>解析：</strong> 識別文本中的具名實體（如公司名、地名）是 NER 的定義。故選 (B)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.2.3：NLP 風險與倫理</h4>
+    <p>在 NLP 導入過程中，企業與開發者必須全面考量潛在風險。</p>
+    <ul>
+        <li><span class="risk-point"><strong>資料層風險：</strong></span> 語料若存在標註錯誤、不一致，或樣本偏斜（<span class="tech-highlight">Data Bias</span>），將導致模型學習偏誤或準確率下降。</li>
+        <li><span class="risk-point"><strong>模型層風險：</strong></span> 訓練資料帶有特定文化、性別、種族偏見時，模型將學習並延續這些偏見（<span class="tech-highlight">Model Bias</span>）。</li>
+        <li><span class="risk-point"><strong>版權風險：</strong></span> 生成式模型若資料來源未經授權或生成內容未遵循適當版權規範，可能會導致法律爭議和信任問題。</li>
+        <li><strong>處理機制：</strong> 標註資料應經過審查和驗證，並通過平衡調整資料或移除敏感欄位來降低偏見。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某企業使用網路爬蟲抓取網站資料訓練 NLP 模型，但未獲得資料提供方的明確授權。這可能引發哪一類 NLP 導入風險？</p>
+        <p>（A）系統維運風險 <strong>（B）資料授權與版權風險</strong> （C）模型偏見風險 （D）推論速度風險</p>
+        <p class="text-detail"><strong>解析：</strong> 未經授權使用網路爬蟲資料，屬於資料授權與版權風險情境。故選 (B)。</p>
+    </div>
+</div>
+
+<h2>章節二：電腦視覺技術與應用（CV, L21102）</h2>
+<p class="text-detail">電腦視覺（CV）目標是讓機器具備「看懂世界」的能力，能夠從影像或影片中自動辨識、分析並理解環境中的資訊。深度學習（CNN）的應用徹底改變了 CV 領域的應用廣度與深度。</p>
+
+<h3>2.1 CV 核心任務與技術</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 2.1.1：影像分類與物件偵測</h4>
+    <p>CV 任務根據其目標的精細度有所不同，從整體分類到像素級別的識別。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>影像分類（Image Classification）</strong></span>：判斷影像屬於哪一類別，目標是為整張圖片指定一個標籤。應用於商品辨識、醫療影像診斷。</li>
+        <li><span class="tech-highlight"><strong>物件偵測（Object Detection）</strong></span>：辨識影像中是否存在特定物件，並<strong>標示其位置（通常以邊界框標示）</strong>。常見模型如 **YOLO**（速度快，適合即時應用）和 Faster R-CNN（準確度高）。</li>
+        <li><strong>CNN 架構：</strong> CNN 通過卷積層（提取局部特徵）與池化層（降維與增強泛化能力）來自動學習圖像特徵，不再依賴手工設計特徵。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若需在一張影像中辨識出多個目標並標示其位置，最適合使用何種技術？</p>
+        <p>（A）影像分類 （B）實例分割 <strong>（C）目標偵測</strong> （D）圖像生成</p>
+        <p class="text-detail"><strong>解析：</strong> 目標偵測（Object Detection）能辨識圖像中多個實體，並給出邊界框位置資訊。故選 (C)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.1.2：影像分割</h4>
+    <p>影像分割是電腦視覺中最細粒度的任務，旨在將影像中的每個像素分配至特定類別。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>語意分割（Semantic Segmentation）</strong></span>：將影像中每一個像素標註為對應的語意類別（如道路、車輛、行人等），但<strong>不區分同一類別中的不同實例</strong>。</li>
+        <li><span class="tech-highlight"><strong>實例分割（Instance Segmentation）</strong></span>：在語意分割的基礎上，<strong>進一步區分同一類別中的不同實體</strong>（例如區分圖像中的兩台不同的車輛）。</li>
+        <li><strong>醫療應用：</strong> 影像分割技術（如 U-Net 模型）在醫學影像診斷中，對精確定位病灶區域具有關鍵作用。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在自動駕駛系統中，若需要精確地分辨道路上的每一輛汽車，並將不同汽車的像素範圍單獨標記，應使用下列哪一種技術？</p>
+        <p>（A）影像分類 <strong>（B）實例分割</strong> （C）物件偵測 （D）語意分割</p>
+        <p class="text-detail"><strong>解析：</strong> 實例分割不僅區分類別（汽車），還要區分不同實體（每輛汽車）的邊界。故選 (B)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.1.3：CV 風險與維運</h4>
+    <ul>
+        <li><span class="risk-point"><strong>資料隱私：</strong></span> 在涉及人臉辨識、公共監控等應用時，影像中往往包含個人識別資料（PII）。若未能妥善處理這些資料，可能違反個資法規，引發隱私與倫理爭議。</li>
+        <li><span class="risk-point"><strong>模型偏見：</strong></span> 在進行人臉辨識時，不同種族的人臉檢測準確度可能會有所不同。</li>
+        <li><span class="risk-point"><strong>資料漂移（Data Drift）：</strong></span> 隨著環境變化或攝影條件的變動（如光照、天氣），可能導致輸入資料分佈的變化，造成模型失效。</li>
+        <li><strong>應對策略：</strong> 實施 MLOps 流程，建立持續整合（CI）與持續部署（CD）架構，並對模型進行持續監控。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某安防監控系統部署的人臉辨識模型，在陰天和夜晚的辨識準確率遠低於白天。這屬於哪一類風險？</p>
+        <p>（A）供應鏈風險 <strong>（B）資料漂移（Data Drift）風險</strong> （C）模型幻覺 （D）版權侵權風險</p>
+        <p class="text-detail"><strong>解析：</strong> 影像品質（光照、天氣）變化導致輸入數據分佈改變，是典型的資料漂移問題。故選 (B)。</p>
+    </div>
+</div>
+
+<h2>章節三：生成式 AI 技術與應用（Generative AI, L21103）</h2>
+<p class="text-detail">生成式 AI（Generative AI）強調「創造性」，能夠根據輸入訊息產生<strong>全新的內容</strong>，與主要應用於分類、辨識或預測的鑑別式 AI（Discriminative AI）形成對比。</p>
+
+<h3>3.1 生成式 AI 核心原理與模型</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 3.1.1：GAN、VAE 與擴散模型</h4>
+    <p>生成式 AI 的核心在於學習資料的分佈特性與潛在結構，並藉此「模擬」或「擴張」該分佈來產出新的樣本。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>GAN（生成對抗網路）</strong></span>：透過**生成器（Generator）**與**判別器（Discriminator）**兩個網路**對抗訓練**而成。優點是生成內容逼真，但缺點是訓練不穩定，可能出現**模式崩潰（Mode Collapse）**。</li>
+        <li><span class="tech-highlight"><strong>擴散模型（Diffusion Models）</strong></span>：如 DALL·E 2、Stable Diffusion。透過逐步加入與移除噪聲的方式訓練模型，學習資料轉換的反向過程。在生成圖像品質方面具明顯優勢，是目前最關鍵的圖像生成技術。</li>
+        <li><strong>VAE（變分自編碼器）：</strong> 透過最大化資料潛在機率分佈下的下界進行訓練，具有良好的潛在空間結構。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>下列哪一種模型不是以「產生新資料」為主要設計目的？</p>
+        <p>（A）生成對抗網路（GAN） <strong>（B）支持向量機（SVM）</strong> （C）變分自編碼器（VAE） （D）擴散模型（Diffusion Model）</p>
+        <p class="text-detail"><strong>解析：</strong> SVM 是判別式模型，主要用於分類或預測。GAN、VAE、擴散模型皆為生成式模型。故選 (B)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 3.1.2：Prompt Engineering 與 RAG</h4>
+    <p>如何下達一個好的指令讓 AI 產出想要的結果，稱為<span class="tech-highlight"><strong>提示詞工程（Prompt Engineering）</strong></span>。</p>
+    <ul>
+        <li><span class="tech-highlight"><strong>RAG（檢索增強生成）</strong></span>：將「外部知識檢索」與「語言生成」結合，能夠在生成過程中整合大量外部資料，提升模型在背景知識要求較高任務中的準確性。</li>
+        <li><strong>RAG 流程：</strong> 檢索（Retrieve）→ 增強（Augment）→ 生成（Generate）。</li>
+        <li>**RAG 目的：** 透過外部資料強化語境、提升資訊準確性。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某企業在導入 LLM 系統時，發現模型在回答專業領域問題時常出現「事實錯誤」或「資訊過期」。為了解決此問題，並確保模型能參考最新的企業內部文檔，最適合導入哪一項技術？</p>
+        <p>（A）模型量化 <strong>（B）檢索增強生成（RAG）</strong> （C）參數剪枝 （D）特徵工程</p>
+        <p class="text-detail"><strong>解析：</strong> RAG 允許模型整合外部知識庫（如企業內部文檔）來生成回應，能有效解決事實錯誤與資訊過期的問題。故選 (B)。</p>
+    </div>
+</div>
+
+<h3>3.2 生成式 AI 挑戰與風險</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 3.2.1：幻覺與倫理風險</h4>
+    <p>生成式 AI 具有強大的內容生成能力，但也伴隨著極高的風險。</p>
+    <ul>
+        <li><span class="risk-point"><strong>模型幻覺（Hallucination）</strong></span>：指 AI 模型產生<strong>看似合理，但實際是錯誤、捏造或無法查證</strong>的資訊的現象。例如，生成虛構的法規條文。</li>
+        <li><span class="risk-point"><strong>倫理風險：</strong></span> AI 產生的內容可能帶有<strong>偏見或歧視</strong>。此外，生成內容可能無法保證真實性，特別是在涉及醫療、法律、金融等高風險領域時。</li>
+        <li><span class="risk-point"><strong>版權與侵權：</strong></span> 生成的內容可能無意中使用受版權保護的段落或語句，或與專利技術相似的文案。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某 AI 助理在回覆客戶時，產生了「本公司已於 2025 年推出您所查詢的產品，該產品具備獨特的 XX 技術」的回應，但經查證該產品與技術並不存在。造成此現象最可能的原因為下列何者？</p>
+        <p>（A）提詞詞過度簡略 <strong>（B）模型幻覺（Hallucination）</strong> （C）系統運行中斷 （D）運算資源不足</p>
+        <p class="text-detail"><strong>解析：</strong> 生成看似流暢專業但實屬虛構的內容是模型幻覺的典型特徵。故選 (B)。</p>
+    </div>
+</div>
+
+<h2>章節四：多模態人工智慧應用與整合（Multimodal AI, L21104）</h2>
+<p class="text-detail">多模態 AI 能夠同時處理並整合來自不同模態的資料（如文字、影像、語音），進一步擴展了 AI 系統的感知能力與智慧水平。</p>
+
+<h3>4.1 多模態 AI 的核心機制</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 4.1.1：定義與跨模態表示學習</h4>
+    <p>多模態 AI 是指能同時處理兩種以上不同資料模態（Modality）的人工智慧系統。</p>
+    <ul>
+        <li><strong>核心目標：</strong> 從異質資料（文字、影像、語音等）中提取有意義的資訊，並進行融合分析，以提升決策品質與模型理解力。</li>
+        <li><span class="tech-highlight"><strong>跨模態表示學習：</strong></span> 將不同模態資料映射至**相同的語意空間**，使模型能比較、關聯或互相翻譯不同模態下的輸入。</li>
+        <li><span class="tech-highlight"><strong>CLIP</strong></span>：是開創性的多模態模型，透過<strong>對比學習（Contrastive Learning）</strong>實現圖片與文字的語意對齊，是圖文匹配、檢索的基礎。</li>
+    </ul>
+
+    <div class="analogy">
+        <p><strong>白話比喻：</strong> 傳統 AI 就像一位只懂中文（或只懂圖像）的專家。多模態 AI 就像一位頂級的翻譯家或偵探，能夠同時看懂中文文件、聽懂語音指令、並分析現場照片，最終得出綜合性的判斷。</p>
+    </div>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某企業想要開發一個 AI 應用，能夠根據用戶的語音輸入（如「幫我找一張紅色跑車的圖片」）來進行圖像搜尋。該應用需要同時處理語音和圖像資訊，應選擇哪一種模型類型？</p>
+        <p>（A）單模態深度學習模型 <strong>（B）多模態模型</strong> （C）強化學習模型 （D）傳統判別式模型</p>
+        <p class="text-detail"><strong>解析：</strong> 語音轉文字（ASR）再進行圖像搜尋，涉及語音、文字、圖像三種模態的整合，需依賴多模態 AI。故選 (B)。</p>
+    </div>
+</div>
+
+<h3>4.2 多模態應用情境</h3>
+
+<div class="knowledge-point">
+    <h4>知識點 4.2.1：醫療、零售與虛實整合</h4>
+    <p>多模態 AI 在處理複雜情境、多源資訊判斷與人機互動任務中展現了更高的彈性與準確性。</p>
+    <ul>
+        <li><strong>智慧醫療：</strong> 結合病患的影像資料（CT、MRI）、電子病歷（EMR）與生理訊號（ECG）進行診斷，提升診斷準確率與效率。</li>
+        <li><strong>零售與顧客行為分析：</strong> 整合攝影機影像（動線、停留時間）、POS 交易紀錄與顧客評論（情感分析），進行消費行為洞察。</li>
+        <li><strong>虛實整合（VR/AR）：</strong> 支援語音、文字、表情、姿勢與 3D 模型的同步處理，使虛擬互動更自然與真實。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在智慧醫療情境中，若 AI 系統需要同時分析病患的 CT 影像與臨床病歷文字紀錄，以輔助醫生判斷病灶位置與診斷結果，最能展現哪種技術的優勢？</p>
+        <p>（A）純影像分類模型 <strong>（B）多模態 AI 系統</strong> （C）純自然語言處理 <strong>（D）機器翻譯</strong></p>
+        <p class="text-detail"><strong>解析：</strong> 結合影像（CV）與文本（NLP）的資料進行綜合判斷是多模態 AI 的核心優勢。故選 (B)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 4.2.2：多模態挑戰與風險</h4>
+    <ul>
+        <li><span class="risk-point"><strong>資料對齊與標註：</strong></span> 不同模態資料（如影像與語音）在時間點、更新頻率與語意邏輯上往往難以一致，導致資料對齊成為技術瓶頸。</li>
+        <li><span class="risk-point"><strong>Deepfake 濫用：</strong></span> 結合圖像生成與語音合成技術所產生的深偽影片，已成為詐騙與假訊息散播的工具。</li>
+        <li><span class="risk-point"><strong>運算資源需求：</strong></span> 多模態模型通常規模龐大（如 GPT-4V），對硬體運算資源需求極高，推論速度可能成為瓶頸.</li>
+        <li>**解決策略：** 採用時序對齊演算法（如 Dynamic Time Warping, DTW）與語意對齊技術（如 CLIP 的對比學習）來處理資料對齊問題。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某企業在開發一個語音辨識與影像分析整合的系統時，發現系統輸出結果在時間點上出現錯亂，例如語音指令「左轉」的響應發生在影像中汽車已經右轉之後。這最可能是下列哪一項風險所致？</p>
+        <p>（A）模型幻覺 <strong>（B）資料對齊（Data Alignment）問題</strong> （C）單純的網路延遲 （D）模型偏見</p>
+        <p class="text-detail"><strong>解析：</strong> 語音和影像在時間點上的錯亂屬於多模態 AI 中常見的資料對齊問題。故選 (B)。</p>
+    </div>
+</div>
+
+</body>
+</html>
+```

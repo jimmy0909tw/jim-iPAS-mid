@@ -1,0 +1,411 @@
+好的，這是一份根據您提供的「AI應用規劃師中級學習路徑」中，**第一階段：機器學習的數學與原理基礎 (L231, L232)** 的核心知識點，以圖卡方式呈現的超詳細講義。
+
+本講義旨在提供深入的原理講解、清晰的數學公式、白話比喻，並結合應用題情境，幫助您掌握應對情境題所需的深度理解。
+
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>AI應用規劃師（中級）階段一：機器學習的數學與原理基礎</title>
+    <style>
+        /* 整體佈局與字體設定 */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.8; 
+            color: #333; 
+            margin: 20px auto; 
+            max-width: 1200px; 
+            background-color: #f4f7f6;
+        }
+
+        /* 標題樣式 */
+        h1 { 
+            color: #004d99; 
+            border-bottom: 4px solid #004d99; 
+            padding-bottom: 15px; 
+            font-size: 2.2em; 
+            font-weight: 700; 
+        }
+        h2 { 
+            color: #cc3300; 
+            border-left: 8px solid #ffaa00; 
+            padding-left: 15px; 
+            background-color: #fff8e1; 
+            font-size: 1.8em; 
+            margin-top: 30px; 
+        }
+        h3 { 
+            color: #00796b; 
+            border-bottom: 2px dashed #b3e0ff; 
+            padding-bottom: 5px; 
+            font-size: 1.4em; 
+            font-weight: 600; 
+            margin-top: 25px;
+        }
+        h4 { 
+            color: #333; 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            margin-top: 15px;
+        }
+
+        /* 知識點圖卡容器 */
+        .knowledge-point { 
+            margin-top: 20px; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .knowledge-point:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        /* 白話比喻樣式 */
+        .analogy { 
+            font-style: italic; 
+            color: #00796b; 
+            padding: 10px 15px; 
+            background-color: #e8f5e9;
+            border-left: 4px solid #00c853;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        /* 公式區塊 */
+        .formula { 
+            background-color: #f0f0f0; 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin: 20px 0; 
+            overflow-x: auto;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* 應用題情境樣式 */
+        .application-scenario { 
+            background-color: #e6f7ff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 25px 0; 
+            border: 2px solid #b3e0ff;
+        }
+        .application-scenario strong { 
+            color: #004d99; 
+            font-size: 1.1em; 
+            font-weight: 700; 
+        }
+        .application-scenario p {
+            font-size: 1em;
+        }
+
+        /* 內容字體強調 */
+        strong { font-weight: bold; color: #004d99; }
+        .text-detail { font-size: 0.95em; color: #555; }
+        .tech-highlight { color: #ff5722; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>AI 應用規劃師（中級）學習路徑：階段一詳細講義</h1>
+<p>此階段（L231, L232）是所有進階 AI 應用開發的<strong>學理基礎</strong>。中級階段要求考生<strong>熟悉 AI 相關技術框架</strong>，並具備技術可行性評估的能力。</p>
+
+<h2>章節一：機器學習基礎數學（L231）</h2>
+<p class="text-detail">機器學習的本質是通過數學工具來建構模型、表示資料和優化參數。此章節涵蓋了機器學習所需的<strong>機率統計、線性代數</strong>及<strong>數值優化</strong>三大數學支柱。</p>
+
+<h3>1.1 機率與統計之機器學習基礎應用（L23101）</h3>
+<p class="text-detail">機率與統計是處理資料中<strong>不確定性</strong>的核心工具。機率模型用以支持模型學習與推論，統計量則用於資料探索和特徵工程。</p>
+
+<div class="knowledge-point">
+    <h4>知識點 1.1.1：機率模型與不確定性</h4>
+    <p>機器學習模型的核心目標是學習一種<strong>條件機率分佈</strong> $P(Y｜X)$，即在給定輸入特徵 $X$ 的情況下，預測目標變數 $Y$ 的機率。模型輸出的機率反映了對預測的<strong>信心程度</strong>。</p>
+    
+    <div class="analogy">
+        <p><strong>白話比喻：</strong> 機器學習不是一個只會說「是」或「否」的算命師，而是一個會告訴你「有 95% 的機率會發生，但仍有 5% 變數」的風險分析師。</p>
+    </div>
+
+    <p class="text-detail"><strong>常見分佈應用：</strong></p>
+    <ul>
+        <li><strong>常態分佈（Normal）：</strong> 應用於<strong>誤差建模</strong>、參數估計。</li>
+        <li><strong>伯努利分佈（Bernoulli）：</strong> 用於處理<strong>二元分類</strong>問題（如邏輯迴歸）。</li>
+        <li><strong>Poisson 分佈：</strong> 常用於模擬在固定時間/空間內，**事件發生次數**的機率（例如網站每小時的訪問量）。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某金融機構希望利用客戶歷史數據建立信貸違約預測模型。在模型評估時，他們主要關注模型預測違約（Y=1）的機率。請問此模型學習的核心目標在數學上應被表述為下列何者？</p>
+        <p>（A） $P(X)$ （B） $P(X｜Y)$ <strong>（C） $P(Y｜X)$</strong> （D） $P(X \cap Y)$</p>
+        <p class="text-detail"><strong>解析：</strong> 模型旨在根據輸入特徵 $X$ 來預測目標變數 $Y$ 的條件機率。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.1.2：描述性統計量與資料摘要</h4>
+    <p>描述性統計量在資料清理（例如處理離群值）和特徵工程中至關重要。</p>
+    <ul>
+        <li><strong>變異數（Variance）與標準差：</strong> 衡量資料的<strong>離散程度</strong>。標準差大意味著資料變異性高。</li>
+        <li><strong>偏態（Skewness）：</strong> 衡量分佈不對稱程度。偏態過大常需要對數轉換來穩定模型訓練。</li>
+        <li><strong>中位數（Median）：</strong> 集中趨勢指標之一，較不受極端值（離群值）影響。</li>
+    </ul>
+    
+    <p><strong>變異數（Variance, $\sigma^2$）公式：</strong></p>
+    <div class="formula">
+        $$\sigma^2 = \frac{\sum_{i=1}^{N}(X_i - \mu)^2}{N}$$
+        <p class="text-detail">其中 $X_i$ 是個別數據點，$\mu$ 是平均數，$N$ 是樣本數。</p>
+    </div>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某 AI 團隊在分析一組連續型數據時，發現部分紀錄的數值明顯高於其他資料點。若專案目標是<strong>識別高價值客戶的行為模式</strong>，最合適的處理方式是？</p>
+        <p>（A）立即刪除離群值 （B）視為錯誤值並替換為平均值 <strong>（C）保留離群值並標註為高價值異常點，納入後續模型訓練考量</strong> （D）將離群值全數轉換為中位數</p>
+        <p class="text-detail"><strong>解析：</strong> 離群值不一定代表錯誤，可能包含<strong>高價值客戶</strong>（異常點）的重要資訊。刪除會丟失目標資訊。</p>
+    </div>
+</div>
+
+<h3>1.2 線性代數之機器學習基礎應用（L23102）</h3>
+<p class="text-detail">線性代數提供了機器學習中資料和模型運算的<strong>數值表示架構</strong>。資料、特徵和權重在數學上均以矩陣、向量的形式存在，模型的運算就是向量在不同空間中的轉換。</p>
+
+<div class="knowledge-point">
+    <h4>知識點 1.2.1：資料的向量與詞嵌入（Word Embedding）</h4>
+    <p>機器學習的輸入必須轉換成電腦可操作的<strong>向量</strong>或<strong>矩陣</strong>形式。在 NLP 領域，將文字轉換成數值向量的技術稱為**詞嵌入（Word Embedding）**。詞嵌入的目的是讓<strong>語意相近的詞彙</strong>在數學空間中距離靠近。</p>
+    
+    <div class="analogy">
+        <p><strong>白話比喻：</strong> 電腦不懂中文，只懂數字。詞嵌入就是給每個詞語一張「身份證」，上面記錄了它與其他詞語的關係向量。如果「國王」減去「男人」加上「女人」，會得到「皇后」的向量，這證明了向量可以運算語意關係。</p>
+    </div>
+
+    <p class="text-detail"><strong>延伸知識：數值運算套件</strong>：</p>
+    <ul>
+        <li>**NumPy** (核心)：專門用於大規模的數值與矩陣運算，是 Python 中進行線性代數操作的基礎套件。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>下列何者為自然語言處理（NLP）中的詞嵌入技術，能將文字轉換為向量以利機器學習處理？</p>
+        <p>（A）TF-IDF <strong>（B）Word2Vec</strong> （C）Stop Words （D）Bag-of-Words</p>
+        <p class="text-detail"><strong>解析：</strong> Word2Vec 是一種詞嵌入方法，可將文字轉換為連續向量空間中具語意的表示。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.2.2：維度簡化與 PCA</h4>
+    <p>當特徵數量過多時，為了**減少運算複雜度**、**去除特徵間的共線性**並**保留主要資訊**，常使用維度簡化技術。</p>
+    <ul>
+        <li><strong>主成分分析（PCA）：</strong> 一種線性降維方法。PCA 的目標是找出能最大化資料變異量的正交向量基底（即主成分）。</li>
+        <li><strong>神經網路運算：</strong> 神經網路中的前向傳播（Forward Propagation）主要依賴**矩陣乘法與向量內積**等線性代數操作。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在處理具有數百個特徵的高維資料集時，為了<strong>減少運算複雜度</strong>並**找出資料中變異最大的主要特徵**，最合適的降維方法是下列何者？</p>
+        <p>（A）t-SNE <strong>（B）主成分分析（PCA）</strong> （C）K-means （D）Z-score 標準化</p>
+        <p class="text-detail"><strong>解析：</strong> PCA 專門用於線性降維，找出最大變異方向。t-SNE 常用於視覺化，而非模型訓練前的特徵重組。</p>
+    </div>
+</div>
+
+<h3>1.3 數值優化技術與方法（L23103）</h3>
+<p class="text-detail">機器學習模型的訓練過程，就是一個<strong>數值優化</strong>問題：通過調整參數，使<strong>損失函數</strong>的值最小化。損失函數的值越小，模型性能越好。</p>
+
+<div class="knowledge-point">
+    <h4>知識點 1.3.1：損失函數（Loss Function）與性能指標</h4>
+    <p>損失函數用來衡量模型預測值 $\hat{y}$ 與真實值 $y$ 之間的誤差。優化器的目標是調整模型參數，使損失函數最小化。</p>
+    <ul>
+        <li><strong>迴歸任務：</strong> 常用<strong>均方誤差（MSE）</strong>。</li>
+        <li><strong>分類任務：</strong> 常用<strong>交叉熵損失（Cross-Entropy Loss）</strong>。</li>
+    </ul>
+
+    <p><strong>分類任務性能指標：準確率（Accuracy）公式：</strong></p>
+    <div class="formula">
+        $$Accuracy = \frac{TP + TN}{TP + TN + FP + FN}$$
+        <p class="text-detail">其中 TP, TN, FP, FN 分別代表真陽性、真陰性、假陽性、假陰性。</p>
+    </div>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某團隊正在開發一個預測客戶購買金額（連續數值）的模型。該任務最適合選擇下列哪種損失函數作為優化目標？</p>
+        <p>（A）交叉熵損失 <strong>（B）均方誤差（MSE）</strong> （C）F1 分數 （D）AUC-ROC</p>
+        <p class="text-detail"><strong>解析：</strong> 預測連續數值是迴歸任務，應採用 MSE。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.3.2：梯度下降與優化器</h4>
+    <p><strong>梯度下降（Gradient Descent, GD）</strong>是所有優化器的基礎原理。它沿著損失函數的**梯度反方向**更新參數，以尋找損失的最小化值。</p>
+    <ul>
+        <li>**梯度（Gradient）：** 損失函數相對於每個權重或偏置的導數（即偏微分），指示損失函數下降最快的方向。</li>
+        <li>**學習率（Learning Rate）：** 決定參數更新的<strong>幅度</strong>。學習率過大容易導致訓練不穩定或發散。</li>
+        <li>**Mini-batch SGD：** 每次僅使用一小批數據計算梯度，是深度學習中最常見的訓練策略。**Batch Size = 1** 時，訓練策略等同於**隨機梯度下降（SGD）**。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若 AI 模型訓練時發現無法有效收斂，且損失函數震盪幅度很大，最可能的原因是：</p>
+        <p>（A）特徵數量過少 <strong>（B）學習率過大</strong> （C）採用了 Adam 優化器 （D）資料量不足</p>
+        <p class="text-detail"><strong>解析：</strong> 學習率過大會導致參數更新幅度過大，使得模型無法穩定收斂，導致損失函數震盪幅度很大。故選 (B)。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 1.3.3：正則化（Regularization）技術</h4>
+    <p>正則化技術透過在損失函數中加入<strong>懲罰項</strong>，**避免模型過度擬合（Overfitting）**，提升泛化能力。</p>
+    <ul>
+        <li><strong>L1 正則化（Lasso）：</strong> 懲罰項與參數絕對值總和成正比。可讓某些特徵的權重**變為零**，實現**特徵選擇**（Feature Selection）。</li>
+        <li><strong>L2 正則化（Ridge）：</strong> 懲罰項與參數平方總和成正比。讓特徵權重變小，但**不會變為零**。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>若企業在建立高維度信用風險模型時，發現模型過度擬合且難以解釋，他們應採用哪種正則化方法來**同時實現特徵選擇和簡化模型**？</p>
+        <p><strong>（A）L1 正則化（Lasso）</strong> （B）L2 正則化（Ridge） （C）Dropout （D）早停法（Early Stopping）</p>
+        <p class="text-detail"><strong>解析：</strong> L1 正則化可以將不重要特徵的權重降為零，從而達到特徵選擇和模型簡化的目的。</p>
+    </div>
+</div>
+
+<h2>章節二：機器學習與深度學習原理（L232）</h2>
+<p class="text-detail">此章節涵蓋機器學習的三大範式、常見演算法的原理，並深入探討深度學習（DL）的基礎架構與核心模型（CNN、RNN、Transformer 等）。</p>
+
+<h3>2.1 機器學習原理與技術（L23201）</h3>
+<p class="text-detail">機器學習是實現 AI 的最主流方法，它讓機器從海量資料中自行找出規律。</p>
+
+<div class="knowledge-point">
+    <h4>知識點 2.1.1：機器學習三大範式</h4>
+    <p>根據訓練數據的需求，ML 可分為三大類型。</p>
+    <ul>
+        <li>**監督式學習（Supervised Learning）：** 需**標籤**數據（Label）。核心任務是<strong>分類</strong>（Classification）和<strong>迴歸</strong>（Regression）。</li>
+        <li>**非監督式學習（Unsupervised Learning）：** **無標籤**數據。核心任務是<strong>分群</strong>（Clustering）、<strong>降維</strong>、<strong>關聯規則</strong>。</li>
+        <li>**強化學習（Reinforcement Learning, RL）：** 透過**回饋信號（Reward）**學習策略。適用於**序列決策**和**策略優化**。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>下列何者最適合訓練電腦下圍棋、自動駕駛等動態重複地互動的問題？</p>
+        <p>（A）監督式學習 （B）非監督式學習 <strong>（D）強化學習（Reinforcement Learning）</strong></p>
+        <p class="text-detail"><strong>解析：</strong> 強化學習讓代理人（Agent）在特定環境中透過試錯學習策略，以最大化長期報酬，適合動態決策任務。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.1.2：過擬合（Overfitting）與泛化能力</h4>
+    <p><strong>過度擬合（Overfitting）</strong>指模型對<strong>訓練資料過度學習</strong>，記住了雜訊，導致在未見過的新資料上表現不佳的現象。模型訓練的最終目標是達到良好的<strong>泛化能力</strong>。</p>
+    
+    <div class="analogy">
+        <p><strong>白話比喻：</strong> 就像一個學生把練習背得滾瓜爛熟，連題目裡的錯字都背下來了，結果考試遇到新題型就完全失敗。</p>
+    </div>
+
+    <p class="text-detail"><strong>解決過擬合方法：</strong> 增加訓練數據量、正則化（L1/L2）、使用 Dropout、簡化模型結構。</p>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>當模型的訓練誤差（Training Error）低、但測試誤差（Test Error）很大時，這通常是在訓練過程中產生下列哪一種情況？</p>
+        <p>（A）模型的泛化能力強 <strong>（B）模型出現過度擬合（Overfitting）</strong> （C）模型出現欠擬合 （D）訓練資料和測試資料之間沒有相關性</p>
+        <p class="text-detail"><strong>解析：</strong> 訓練誤差低但測試誤差大是過擬合的典型特徵，代表模型記住了訓練集，但在新數據上表現差。故選 (B)。</p>
+    </div>
+</div>
+
+<h3>2.2 常見機器學習演算法（L23202）</h3>
+<p class="text-detail">理解常見演算法的優缺點與應用情境，是選擇「合適的模型」進行部署的基礎。</p>
+
+<div class="knowledge-point">
+    <h4>知識點 2.2.1：分類與迴歸模型</h4>
+    <ul>
+        <li>**線性迴歸（Linear Regression）：** 專用於預測**連續數值**的迴歸問題。</li>
+        <li>**邏輯迴歸（Logistic Regression）：** 用於**二元分類**（如垃圾郵件分類 Spam / Not Spam），輸出經由 Sigmoid 函數轉換為機率。</li>
+        <li>**支持向量機（SVM）：** 找到最大化分類邊界的超平面，適用於**小樣本分類**。</li>
+        <li>**樸素貝式分類（Naïve Bayes）：** 基於貝式定理，假設特徵**彼此獨立**。計算效率高，常用於<strong>文本分類</strong>。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某公司想要建立一個垃圾郵件分類系統，他們希望「能辨識郵件是否為垃圾信」並且「能隨著新郵件持續改進」，最合適的方法是：</p>
+        <p><strong>（A）使用監督式學習（分類模型），並定期更新訓練數據</strong> （B）使用非監督式學習（聚類模型） （C）僅用關鍵字規則過濾 （D）使用生成式模型</p>
+        <p class="text-detail"><strong>解析：</strong> 垃圾郵件分類是典型的二元分類問題，屬於監督式學習。且需要持續更新（Retraining）才能適應新形態垃圾郵件。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.2.2：樹模型與非監督式分群</h4>
+    <ul>
+        <li>**決策樹（Decision Tree）：** 透過一系列條件規則進行分類，具備良好的**解釋性**，但容易過擬合。</li>
+        <li>**隨機森林（Random Forest）：** 多棵決策樹集成，能降低過擬合。</li>
+        <li>**梯度提升（Gradient Boosting, XGBoost）：** 逐步修正前一模型的錯誤，準確度高。</li>
+        <li>**DBSCAN（分群）：** 基於密度的分群方法，能發現**任意形狀**的群集，並自動將離群點（Noise）標示為雜訊。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>某線上音樂平台希望根據用戶的聽歌與查詢行為，將用戶劃分為不同的類型。若事前<strong>沒有定義用戶類型</strong>，下列哪一種模型最適合用於此任務？</p>
+        <p>（A）邏輯迴歸 （B）決策樹 <strong>（C）基於密度之含噪空間聚類法（DBSCAN）</strong> （D）線性迴歸</p>
+        <p class="text-detail"><strong>解析：</strong> 「沒有定義用戶類型」代表這是非監督式學習中的分群任務。DBSCAN 是一種分群演算法，適合在沒有預先定義類別或數量的情況下使用。故選 (C)。</p>
+    </div>
+</div>
+
+<h3>2.3 深度學習原理與框架（L23203）</h3>
+<p class="text-detail">深度學習是以多層神經網路為基礎的學習架構，能自動學習高階抽象特徵。理解其架構是掌握 NLP 與 CV 應用的關鍵。</p>
+
+<div class="knowledge-point">
+    <h4>知識點 2.3.1：卷積神經網路（CNN）</h4>
+    <p><strong>CNN</strong> 是一種擅長處理<strong>網格狀資料</strong>（如圖像）的深度學習模型。</p>
+    <ul>
+        <li>**卷積層（Convolutional Layer）：** 透過卷積核提取影像的**局部特徵**，使用<strong>權重共享</strong>，減少參數數量。</li>
+        <li>**池化層（Pooling Layer）：** 目的為降低特徵圖維度、減少參數、**增強平移不變性**。池化層可減少過擬合與運算量。</li>
+    </ul>
+
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>在 AI 技術應用中，若需同時滿足「降低影像檢測誤判」與「減少模型計算量」，最合適的方法是：</p>
+        <p>（A）增加訓練樣本數 <strong>（B）使用池化層（Pooling Layer）</strong> （C）改用生成式 AI （D）僅使用文字資料訓練</p>
+        <p class="text-detail"><strong>解析：</strong> 池化層（Max Pooling 或 Average Pooling）的主要作用是降低特徵圖維度、減少參數，從而減少計算量並增強模型泛化能力（降低誤判）。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.3.2：序列模型與 Transformer 架構</h4>
+    <ul>
+        <li>**遞迴神經網路（RNN）：** 適合處理序列數據（語音、文字）。但傳統 RNN 存在<strong>梯度消失</strong>問題。</li>
+        <li>**LSTM/GRU：** RNN 的改良版，引入**門控機制**，解決了 RNN 的梯度消失問題，擅長處理長期依賴性。</li>
+        <li>**Transformer：** 核心是**自注意力機制（Self-Attention）**。它允許模型在處理每個詞時，動態地考慮序列中所有其他詞的影響，實現了**長距依賴關係的建模**，並支援**並行運算**。</li>
+        <li>**BERT vs GPT：** BERT 是第一個基於 Transformer 的**雙向**預訓練模型，擅長**語言理解**（如問答、分類）；GPT 使用**單向**預訓練，強調文本**生成**能力。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>語言模型 BERT 的主要特性為何？</p>
+        <p>（A）使用遞迴神經網路 （B）為單向語言模型 <strong>（D）具雙向上下文理解能力</strong></p>
+        <p class="text-detail"><strong>解析：</strong> BERT（Bidirectional Encoder Representations from Transformers）可同時考慮上下文的前後語義，具備雙向理解能力。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.3.3：生成式模型（Generative AI）</h4>
+    <p>生成式 AI（Generative AI）是能學習數據分佈，並<strong>產生全新內容</strong>（如文本、圖像）的技術。與**鑑別式 AI（Discriminative AI）**（用於分類、辨識或預測）形成對比。</p>
+    <ul>
+        <li>**GAN（生成對抗網路）：** 由**生成器**與**鑑別器**兩個網路**對抗訓練**而成，能生成高寫實性內容。</li>
+        <li>**擴散模型（Diffusion Models）：** 透過從純噪音中**逐步去噪**的過程來生成高品質數據，尤其擅長圖像生成。代表應用如 DALL·E-2。</li>
+        <li>**模型幻覺（Hallucination）：** AI 模型產生<strong>看似合理，但實際是錯誤、捏造或無法查證</strong>的資訊的現象。</li>
+    </ul>
+    
+    <div class="application-scenario">
+        <strong>應用題情境：</strong>
+        <p>下列何者並非以「產生新資料」為主要設計目的？</p>
+        <p><strong>（A）支援向量機（Support Vector Machine）</strong> （B）變分自編碼器（VAE） （C）自迴歸模型 （D）擴散模型</p>
+        <p class="text-detail"><strong>解析：</strong> VAE、自迴歸模型和擴散模型都是生成式模型。SVM 是判別式模型，主要用於分類或預測。</p>
+    </div>
+</div>
+
+<div class="knowledge-point">
+    <h4>知識點 2.3.4：深度學習框架與工具</h4>
+    <p>雖然 L23203 強調原理，但實務中需要掌握運行 DL 的核心框架：</p>
+    <ul>
+        <li>**核心框架：** <span class="tech-highlight">TensorFlow / PyTorch</span> 是最主流的深度學習框架。</li>
+        <li>**Python 基礎套件：** 需熟悉 **Pandas** (表格資料處理) 和 **NumPy** (數值與矩陣運算)。</li>
+        <li>**GPU 相容性：** 部署 DL 模型需注意 <span class="tech-highlight">CUDA / cuDNN</span> 驅動程式與框架版本的對應。</li>
+    </ul>
+</div>
+
+</body>
+</html>
+```

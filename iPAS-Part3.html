@@ -1,0 +1,303 @@
+<!-- Chosen Palette: 學習者導向配色 (Deep Blue, Orange-Red, Teal, Purple/Yellow Highlight) -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 技術應用與系統部署 (L35-L45) 終極強化講義 - 靜態版</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 MathJax 以優美地渲染 LaTeX 公式 (用於結構一致性) -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* 自定義顏色和樣式以模擬顏色區分 (與階段二文件保持一致) */
+        .color-main-title { color: #2c3e50; /* Deep Blue */ }
+        .color-section-title { color: #e74c3c; /* Orange-Red */ }
+        .color-sub-header { color: #00796b; /* Teal */ }
+        .table-header-bg { background-color: #f1f2f6; /* Light Blue-Gray */ }
+        .formula-bg { 
+            background-color: #ecf0f1; /* Extra Light Gray for formula block */
+            border-left: 5px solid #3498db; /* Blue accent */
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .key-emphasis { color: #8e44ad; /* Dark Purple for important text */ font-weight: 700; }
+        .key-highlight-bg { background-color: #fce8a8; /* Light Yellow for highlight */ }
+        .app-question { 
+            background-color: #f0fdf4; /* Light Green for Q&A */
+            border-left: 4px solid #10b981; /* Green border */
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        body { font-family: 'Inter', 'Microsoft JhengHei', Arial, sans-serif; }
+        
+        /* 確保表格內的文字可讀性 */
+        .data-table td, .data-table th {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* 確保內容區域的寬度，讓文件更容易閱讀 */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-6 md:p-8 min-h-screen">
+
+    <!-- 主內容區 (Main Content Area) -->
+    <main class="max-w-6xl mx-auto">
+        <header class="mb-10 text-center border-b-4 border-red-400 pb-4">
+            <h1 class="text-5xl font-extrabold color-main-title mb-2">AI 技術應用與系統部署 (L35-L45) 終極強化講義</h1>
+            <p class="text-gray-500 text-lg">本講義專為應對考試中的 MLOps、部署架構、模型監控及 AI 倫理法規情境題而設計。</p>
+        </header>
+
+        <!-- 圖卡 #1 內容：MLOps 與持續維運 (Model Monitoring) -->
+        <section id="card1" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">⚙️ 圖卡 #1：MLOps 與持續訓練維運</h2>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">💡 1. MLOps 的核心流程與價值</h3>
+            <p class="text-gray-600 mb-4">MLOps 旨在將機器學習模型的開發、部署和維護流程**自動化**、**標準化**和**可持續化**。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">流程</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">持續整合 (CI)</span></td>
+                            <td>自動化程式碼、模型、資料的**版本控制**與測試。</td>
+                            <td><span class="key-highlight-bg">**品管檢驗站**</span>：確保每個新零件（代碼/模型）都能正常運作。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">持續交付 (CD)</span></td>
+                            <td>將通過測試的模型**自動部署**到線上或預生產環境。</td>
+                            <td><span class="key-highlight-bg">**自動出貨系統**</span>：隨時準備好將模型推向市場。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">持續訓練 (CT)</span></td>
+                            <td>根據新的數據或性能下降，**自動觸發模型再訓練**。</td>
+                            <td><span class="key-highlight-bg">**自動進修**</span>：模型發現自己知識過時時會自動學習新知識。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【延伸知識】MLOps 關鍵組件</p>
+                <ul class="list-disc ml-6 text-gray-700">
+                    <li>**特徵儲存庫 (Feature Store)**：統一管理和提供訓練/推論用的特徵數據。</li>
+                    <li>**模型註冊中心 (Model Registry)**：記錄模型版本、元數據和性能指標。</li>
+                </ul>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一個電商推薦系統的效能開始下降，監控系統發現模型準確率低於閾值。在 MLOps 架構下，應由哪一個核心流程被觸發，來解決這個問題？</p>
+                <p class="text-gray-500 mt-1">**答案**：應觸發<span class="key-emphasis">**持續訓練 (CT)**</span> 流程。系統會自動拉取最新數據，對模型進行再訓練，並經過 CI/CD 流程後重新部署，以應對環境變化導致的效能下降。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">🚨 2. 模型監控：數據漂移 (Drift)</h3>
+            <p class="text-gray-600 mb-4">部署後最常見的問題是數據與概念發生變化，導致模型預測失效。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">漂移類型</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">診斷與後果</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">資料漂移 (Data Drift)</span></td>
+                            <td><span class="key-highlight-bg">**輸入數據分佈**</span>隨時間變化。</td>
+                            <td>診斷：比較訓練數據與線上數據的統計分佈 (e.g., KS 檢定)。後果：模型接收到「陌生」輸入。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">概念漂移 (Concept Drift)</span></td>
+                            <td><span class="key-highlight-bg">**輸入與輸出之間的關係 (f(x) $\rightarrow$ y)**</span> 隨時間變化。</td>
+                            <td>診斷：模型準確率/召回率下降。後果：模型「學到的規則」已過時。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一個基於使用者情緒和習慣訓練的廣告點擊預測模型，在疫情爆發後，其預測的準確率突然大幅下降。經檢查，輸入特徵的分佈（如年齡、地點）並未改變，但使用者對「居家廣告」的點擊行為模式產生了根本性變化。這是哪一種漂移？</p>
+                <p class="text-gray-500 mt-1">**答案**：這是典型的<span class="key-emphasis">**概念漂移 (Concept Drift)**</span>。因為輸入特徵 (情緒/習慣) 和目標變數 (點擊率) 之間的<span class="key-emphasis">**潛在關係發生了變化**</span>，雖然輸入數據本身的分佈看似穩定，但模型與真實世界因果關係已經脫鉤。需透過 CT 引入新數據進行訓練。</p>
+            </div>
+        </section>
+
+        <!-- 圖卡 #2 內容：AI 系統架構與模型可解釋性 (XAI) -->
+        <section id="card2" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">💻 圖卡 #2：部署架構、微服務與 XAI</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🌐 1. 雲端 (Cloud) vs. 邊緣運算 (Edge)</h3>
+            <p class="text-gray-600 mb-4">選擇最適合應用情境的 AI 服務部署地點，是系統規劃的首要任務。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">架構</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">優勢</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">適用情境</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">雲端 (Cloud)</span></td>
+                            <td><span class="key-highlight-bg">**高算力、集中管理**</span>、易於擴展。</td>
+                            <td>處理**大量、非即時**數據 (e.g., 離線批次推薦、大型模型訓練)。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">邊緣運算 (Edge)</span></td>
+                            <td><span class="key-highlight-bg">**低延遲、隱私保護**</span>、節省頻寬。</td>
+                            <td>處理**即時**數據 (e.g., 無人車感測器、工廠即時瑕疵檢測)。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家醫院希望部署一個 AI 模型，用於分析手術室內的即時影像以提醒醫生潛在的危險操作。請問應採用雲端還是邊緣運算架構？其主要考量因素是什麼？</p>
+                <p class="text-gray-500 mt-1">**答案**：應採用<span class="key-emphasis">**邊緣運算**</span>。主要考量因素是<span class="key-emphasis">**極低的延遲 (Latency)**</span>（手術室中的延遲可能是致命的）和**隱私保護**（影像數據不應輕易傳輸到雲端）。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">🔎 2. 模型可解釋性 (XAI)</h3>
+            <p class="text-gray-600 mb-4">可解釋性對於高風險應用、除錯和建立使用者信任至關重要。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">技術</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">目的</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">適用性</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">LIME (Local Interpretable Model-agnostic Explanations)</span></td>
+                            <td>針對**單一預測**提供解釋。</td>
+                            <td><span class="key-highlight-bg">**局部解釋 (Why this single case?)**</span>，模型無關性。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">SHAP (SHapley Additive exPlanations)</span></td>
+                            <td>基於合作賽局理論，計算每個特徵對**整體預測**的邊際貢獻。</td>
+                            <td><span class="key-highlight-bg">**全面解釋 (Feature Importance)**</span>，更具理論基礎。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>某銀行使用一個複雜的深度學習模型來決定是否核發高額貸款。一位申請者被拒絕後要求銀行提供被拒絕的原因。此時銀行應該使用 LIME 還是 SHAP 來說明？</p>
+                <p class="text-gray-500 mt-1">**答案**：應使用<span class="key-emphasis">**LIME**</span>。因為 LIME 專門為**單一、特定的預測結果**提供可解釋性（例如：「你被拒絕是因為你的債務收入比過高，且工作年限不足」），這符合法規要求的個案解釋權。</p>
+            </div>
+        </section>
+
+        <!-- 圖卡 #3 內容：AI 倫理、治理與法規 -->
+        <section id="card3" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">⚖️ 圖卡 #3：AI 倫理、治理與隱私法規</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🛡️ 1. 個人身份資訊 (PII) 與隱私保護</h3>
+            <p class="text-gray-600 mb-4">理解數據的敏感性並採用適當的保護技術，是合規的基礎。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">類型</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">保護技術</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">直接 PII</span></td>
+                            <td>單獨即可識別個人 (e.g., 姓名、身分證字號)。</td>
+                            <td>**遮蔽 (Masking)**、**加密 (Encryption)**。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">準識別 PII (Quasi-Identifier)</span></td>
+                            <td>結合其他資訊才可識別 (e.g., 年齡、郵遞區號、職業)。</td>
+                            <td>**泛化 (Generalization)**、**分桶 (Bucketing)**。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">GDPR 權利</span></td>
+                            <td>被遺忘權、資料可攜權、存取權。</td>
+                            <td>**原則**：資料最小化、目的限制、準確性。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>為了訓練一個關於地理位置的推薦模型，資料科學家決定將使用者的準識別 PII（年齡、收入）進行處理。為了避免個別資料點被識別，但仍想保留數據的統計特性，他將所有年齡都轉換為「區間」（如 20-30 歲）。請問這是哪一種隱私保護技術？</p>
+                <p class="text-gray-500 mt-1">**答案**：這是<span class="key-emphasis">**泛化 (Generalization)**</span>或<span class="key-emphasis">**分桶 (Bucketing)**</span> 技術。它減少了數據的粒度，將多個個體歸為一組，從而降低了重新識別的風險，這是處理準識別 PII 的常見方法。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">🚫 2. AI 倫理與潛在偏見 (Bias)</h3>
+            <p class="text-gray-600 mb-4">偏見可能在 AI 生命週期的任何階段滲入，必須主動檢測和減輕。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">偏見類型</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">選擇偏見 (Selection Bias)</span></td>
+                            <td>採集的樣本**無法代表**真實世界的群體分佈。</td>
+                            <td><span class="key-highlight-bg">**偏食的老師**</span>：只教導單一主題的知識，導致學生對其他領域無知。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">測量偏見 (Measurement Bias)</span></td>
+                            <td>數據採集或標註的過程**不準確或不公平**。</td>
+                            <td><span class="key-highlight-bg">**壞掉的尺**</span>：用一把不準確的尺量度所有人的身高。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">模型偏見 (Algorithm Bias)</span></td>
+                            <td>模型學習了數據中的**歷史性不平等**並放大。</td>
+                            <td><span class="key-highlight-bg">**代代相傳的歧視**</span>：模型重複歷史數據中的錯誤決策。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家大型科技公司使用一個面試篩選 AI 系統，發現該系統對於來自特定學校的申請者給予了不成比例的高分。進一步分析發現，這是因為訓練數據中，來自該學校的歷史員工績效數據遠多於其他學校。這是哪一種偏見？</p>
+                <p class="text-gray-500 mt-1">**答案**：這是<span class="key-emphasis">**選擇偏見 (Selection Bias)**</span>。問題源於訓練數據中**樣本的分佈不平衡**（來自特定學校的樣本不成比例），導致模型過度學習了該群體的模式，而未能公平泛化到其他群體。</p>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 py-6 mt-8 border-t border-gray-300">
+            <p>本講義涵蓋了 AI 系統部署與維運、架構選型、模型可解釋性及 AI 治理與法規的核心知識點，祝您考試順利！</p>
+        </footer>
+    </main>
+
+</body>
+</html>

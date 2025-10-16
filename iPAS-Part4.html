@@ -1,0 +1,294 @@
+<!-- Chosen Palette: 學習者導向配色 (Deep Blue, Orange-Red, Teal, Purple/Yellow Highlight) -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成式 AI、多模態與高階應用規劃 (L46+) 終極強化講義 - 靜態版</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* 自定義顏色和樣式以模擬顏色區分 (與階段三文件保持一致) */
+        .color-main-title { color: #2c3e50; /* Deep Blue */ }
+        .color-section-title { color: #e74c3c; /* Orange-Red */ }
+        .color-sub-header { color: #00796b; /* Teal */ }
+        .table-header-bg { background-color: #f1f2f6; /* Light Blue-Gray */ }
+        .formula-bg { 
+            background-color: #ecf0f1; /* Extra Light Gray for formula block */
+            border-left: 5px solid #3498db; /* Blue accent */
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .key-emphasis { color: #8e44ad; /* Dark Purple for important text */ font-weight: 700; }
+        .key-highlight-bg { background-color: #fce8a8; /* Light Yellow for highlight */ }
+        .app-question { 
+            background-color: #f0fdf4; /* Light Green for Q&A */
+            border-left: 4px solid #10b981; /* Green border */
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        body { font-family: 'Inter', 'Microsoft JhengHei', Arial, sans-serif; }
+        
+        /* 確保表格內的文字可讀性 */
+        .data-table td, .data-table th {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* 確保內容區域的寬度，讓文件更容易閱讀 */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-6 md:p-8 min-h-screen">
+
+    <!-- 主內容區 (Main Content Area) -->
+    <main class="max-w-6xl mx-auto">
+        <header class="mb-10 text-center border-b-4 border-red-400 pb-4">
+            <h1 class="text-5xl font-extrabold color-main-title mb-2">生成式 AI、多模態與高階應用規劃 (L46+) 終極強化講義</h1>
+            <p class="text-gray-500 text-lg">本講義專為應對 Generative AI、多模態整合、雲端策略與高階應用決策情境題而設計。</p>
+        </header>
+
+        <!-- 圖卡 #1 內容：生成式 AI 與大型語言模型 (LLM) -->
+        <section id="card1" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">🧠 圖卡 #1：生成式 AI、RAG 與微調策略</h2>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">💡 1. 檢索增強生成 (RAG) vs. 模型微調 (Fine-Tuning)</h3>
+            <p class="text-gray-600 mb-4">RAG 和 Fine-Tuning 是將 LLM 應用於特定領域知識的兩種核心策略，選擇正確的方法至關重要。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">策略</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">白話比喻</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">關鍵應用與優勢</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">RAG (Retrieval-Augmented Generation)</span></td>
+                            <td><span class="key-highlight-bg">**帶著筆記本參加考試**</span>：模型在回答前先去特定資料庫找答案。</td>
+                            <td>**優勢**：即時更新知識、可追溯性高（知道答案來源）、成本低。**應用**：企業內部知識庫問答、法律文件查詢。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">微調 (Fine-Tuning)</span></td>
+                            <td><span class="key-highlight-bg">**讓外國學生學會台灣腔**</span>：改變模型說話的風格、語氣和特定任務能力。</td>
+                            <td>**優勢**：改善模型風格/語氣、提升特定任務性能（如分類）。**應用**：客服機器人風格統一、特定程式碼生成。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【公式概念】RAG 的核心步驟</p>
+                <p class="text-gray-700">RAG 的核心是**向量搜索**，涉及將文件轉換為向量 (Embedding)，計算向量距離，然後將檢索結果結合 Prompt 進行生成。</p>
+                <div class="text-center my-3">
+                    <span class="key-emphasis">相似度計算 (Cosine Similarity)：</span>
+                    <p class="text-sm italic">用於衡量使用者 Query 向量 $\mathbf{Q}$ 與文件 Chunk 向量 $\mathbf{D}$ 的相似度。</p>
+                    <!-- Conceptual Formula: Cosine Similarity -->
+                    $$ \text{Similarity}(\mathbf{Q}, \mathbf{D}) = \frac{\mathbf{Q} \cdot \mathbf{D}}{\|\mathbf{Q}\| \|\mathbf{D}\|} $$
+                </div>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家新藥開發公司，其法規文件每年都會更新。他們需要一個 AI 系統能準確回答「最新法規對某藥物原料的限制」的問題，並要求答案必須指出資料來源頁碼。請問該公司應優先採用 RAG 還是 Fine-Tuning 策略？為什麼？</p>
+                <p class="text-gray-500 mt-1">**答案**：應優先採用<span class="key-emphasis">**RAG (檢索增強生成)**</span>。理由是 RAG 專注於<span class="key-emphasis">**知識的即時更新**</span>和<span class="key-emphasis">**答案的可追溯性**</span>（引用文件）。如果採用 Fine-Tuning，每次法規更新都需要重新訓練模型，成本高且無法保證答案來自特定文件。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">⚙️ 2. Prompt Engineering (提示工程)</h3>
+            <p class="text-gray-600 mb-4">Prompt Engineering 是與 LLM 互動的藝術，確保模型輸出符合預期。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">技術</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">應用目標</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">Few-Shot Prompting</span></td>
+                            <td>在 Prompt 中提供 2-3 個<span class="key-highlight-bg">**範例**</span>讓模型學習任務模式。</td>
+                            <td>提高模型在**特定格式**或**少見任務**上的準確率。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">Chain-of-Thought (CoT)</span></td>
+                            <td>要求模型在最終答案前**逐步思考**、列出推理過程。</td>
+                            <td>解決**複雜推理**、**數學**或**邏輯**問題，大幅降低幻覺 (Hallucination)。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">System Prompt/Role Setting</span></td>
+                            <td>在對話開始前設定模型的<span class="key-highlight-bg">**身份、規則**</span>和<span class="key-highlight-bg">**限制**</span>。</td>
+                            <td>定義模型輸出的**語氣、風格**和**行為邊界**。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>您正在設計一個 AI 助理來幫助公司法務部門審核合約。合約審核通常需要複雜的邏輯判斷。為了確保 AI 在判斷「條款是否具備法律約束力」時能更可靠，且能向使用者展示其推理過程，您應該採用哪一種 Prompt Engineering 技術？</p>
+                <p class="text-gray-500 mt-1">**答案**：應採用<span class="key-emphasis">**Chain-of-Thought (CoT)**</span>。因為 CoT 強迫模型執行<span class="key-emphasis">**多步驟的邏輯推理**</span>，這對於複雜的法律判斷至關重要，同時也能輸出推理步驟，滿足法務對**可驗證性**的需求。</p>
+            </div>
+        </section>
+
+        <!-- 圖卡 #2 內容：多模態 AI 與跨領域應用 -->
+        <section id="card2" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">👁️ 圖卡 #2：多模態 AI 與跨領域整合</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🤝 1. 多模態 AI 的核心概念</h3>
+            <p class="text-gray-600 mb-4">多模態 AI 旨在理解和處理兩種或兩種以上模態 (如文字、圖像、語音) 的資訊，並在這些模態之間建立聯繫。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">核心機制</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">應用範例</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">跨模態對齊 (Cross-Modal Alignment)</span></td>
+                            <td>讓不同模態的特徵向量（Embedding）映射到<span class="key-highlight-bg">**相同的語義空間**</span>。</td>
+                            <td>圖像和文字可以互相搜索 (e.g., 輸入文字「紅色的跑車」找到圖片)。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">基礎模型 (Foundation Model)</span></td>
+                            <td>在**海量通用數據**上訓練，可適應多種下游任務的多模態模型 (e.g., GPT-4V)。</td>
+                            <td><span class="key-highlight-bg">**一魚多吃**</span>：一個模型能做圖像識別、文字問答和程式碼生成。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【延伸知識】CLIP 架構 (對齊關鍵)</p>
+                <p class="text-gray-700">CLIP (Contrastive Language-Image Pre-training) 使用**對比學習**來訓練圖像編碼器 (Image Encoder) 和文本編碼器 (Text Encoder)，使其輸出向量在語義上相似：</p>
+                <p class="text-sm italic">目標：最大化正確圖像-文本對的相似度，最小化錯誤配對的相似度。</p>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家時尚零售商希望開發一個內部工具：讓設計師可以上傳一張新的設計草圖（圖像），系統立刻找出庫存中所有顏色、材質描述與該草圖「風格相似」的布料（文本資料）。要實現這個功能，最關鍵的 AI 技術基礎是什麼？</p>
+                <p class="text-gray-500 mt-1">**答案**：最關鍵的是<span class="key-emphasis">**跨模態對齊 (Cross-Modal Alignment)**</span>。系統需要將圖像（草圖）和文本（布料描述）透過**視覺-語言模型 (VLM)** 轉換為**相同的向量空間**，才能進行有效的相似度計算和檢索。</p>
+            </div>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">📈 2. 雲端 AI 服務的策略差異</h3>
+            <p class="text-gray-600 mb-4">在高階應用規劃中，必須清楚區分通用服務與專屬服務的定位。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">服務類型</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定位與功能</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">優勢 (規劃考量點)</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">Azure OpenAI 服務</span></td>
+                            <td>提供<span class="key-highlight-bg">**LLM 模型 (如 GPT 系列)**</span>的私有化、可控部署。</td>
+                            <td>**數據安全/隔離**、**高可靠性**、**服務合規**。專注於生成任務。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">Azure AI 服務 (Cognitive Services)</span></td>
+                            <td>提供**預建置的 API** (如視覺、語音、翻譯)。</td>
+                            <td><span class="key-highlight-bg">**開箱即用**</span>、**高準確率**、**無需 ML 專長**。專注於辨識/分析任務。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家國際金融公司需要一個服務來即時翻譯數百封客戶信件，並將信件內容分為「緊急」、「常規」和「投訴」三類。同時，他們也需要一個客服機器人，能使用公司內部專屬的語氣回覆客戶。請問他們應該選擇哪一種 Azure 服務組合？</p>
+                <p class="text-gray-500 mt-1">**答案**：</p>
+                <ul class="list-disc ml-6 text-gray-700">
+                    <li>**即時翻譯/分類**：使用<span class="key-emphasis">**Azure AI 服務**</span> (Cognitive Services)，因為這是開箱即用的**辨識/分析**任務，成熟且成本可控。</li>
+                    <li>**專屬語氣客服機器人**：使用<span class="key-emphasis">**Azure OpenAI 服務**</span>，因為這涉及 LLM 的**生成能力**，且需要透過 RAG 或 Fine-Tuning 整合企業內部語氣和知識。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 圖卡 #3 內容：AI 治理與專案決策 -->
+        <section id="card3" class="bg-white p-6 rounded-xl shadow-xl mb-10">
+            <h2 class="text-3xl font-bold color-section-title border-b-2 border-red-300 pb-3 mb-6">🎯 圖卡 #3：AI 治理、專案決策與高階框架</h2>
+            
+            <h3 class="text-2xl font-semibold color-sub-header mt-8 mb-4">🛑 1. 負責任 AI 框架 (Responsible AI)</h3>
+            <p class="text-gray-600 mb-4">這是專案規劃中不可或缺的一環，要求從設計之初就考慮公平性、可信賴性等議題。</p>
+
+            <div class="overflow-x-auto shadow-md rounded-lg mb-4">
+                <table class="w-full data-table text-sm text-gray-700">
+                    <thead class="table-header-bg text-xs uppercase text-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">核心原則</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">定義 (情境考量)</div></th>
+                            <th scope="col" class="py-3 px-6"><div class="key-emphasis">對應技術</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50">
+                            <td><span class="key-emphasis">公平性 (Fairness)</span></td>
+                            <td>模型輸出不應因種族、性別等受保護屬性而<span class="key-highlight-bg">**產生系統性差異**</span>。</td>
+                            <td>重抽樣 (Resampling)、分配平等差異 (Disparate Impact) 測試。</td>
+                        </tr>
+                        <tr class="bg-gray-50 border-b hover:bg-gray-100">
+                            <td><span class="key-emphasis">可解釋性 (Explainability)</span></td>
+                            <td>能以人類可理解的方式說明模型的預測或決策依據。</td>
+                            <td>LIME、SHAP、特徵重要性 (Feature Importance)。</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-50">
+                            <td><span class="key-emphasis">可靠性與安全性 (Reliability)</span></td>
+                            <td>模型在各種情境下**一致且穩定**地運作，並能抵抗惡意攻擊。</td>
+                            <td>對抗性訓練 (Adversarial Training)、模型監控 (Monitoring)。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一個用於監控產線並自動停止機器的 AI 系統，在過去一個月內，其**準確率**一直穩定保持在 95% 以上，但卻頻繁地發生「對同一物體在不同光線條件下，輸出結果不一致」的問題，導致產線誤停。在負責任 AI 框架中，這個問題主要違反了哪一項原則？應如何從設計上改善？</p>
+                <p class="text-gray-500 mt-1">**答案**：主要違反了<span class="key-emphasis">**可靠性與安全性 (Reliability)**</span>。儘管整體準確率高，但模型在邊界條件（光線變化）下缺乏**一致性**和**穩定性**。從設計上應透過**資料增強 (Data Augmentation)**，特別是增加不同光線和角度的訓練數據，來提高模型的魯棒性 (Robustness)。</p>
+            </div>
+
+            <h3 class="text-2xl font-semibold color-sub-header mt-10 mb-4">💰 2. 專案價值與成本考量</h3>
+            <p class="text-gray-600 mb-4">AI 應用規劃師必須評估技術的可行性與商業回報。</p>
+
+            <div class="formula-bg">
+                <p class="text-gray-800 font-semibold mb-2">【公式概念】模型複雜度 vs. 推論成本 (Inference Cost)</p>
+                <p class="text-gray-700">在部署 LLM 時，模型參數量 (Parameters) 和運算量 (FLOPs) 是影響**延遲**和**營運成本 (OPEX)** 的關鍵指標。</p>
+                <!-- Conceptual Formula: Cost vs. Parameter -->
+                $$ \text{推論成本} \propto \text{模型參數量} \times \text{每 token 運算量} \times \text{API 調用次數} $$
+                <p class="text-sm italic key-emphasis">規劃原則：在滿足準確率的前提下，應選擇<span class="key-highlight-bg">**參數量最小**</span>的模型（如輕量級 LLM 或知識蒸餾模型），以控制長期營運成本。</p>
+            </div>
+            
+            <div class="app-question">
+                <p class="key-emphasis"> [情境應用題] </p>
+                <p>一家金融科技公司打算開發一個每天處理數百萬次交易的反詐騙系統。他們正在考慮使用一個擁有 1750 億參數的 LLM 進行異常檢測，或是一個經過良好優化且只有 1 億參數的 LightGBM 模型。從**長期營運成本**和**延遲**考量，AI 應用規劃師會推薦哪一個模型？</p>
+                <p class="text-gray-500 mt-1">**答案**：規劃師會推薦<span class="key-emphasis">**1 億參數的 LightGBM 模型**</span>。對於需要**極低延遲**和**超高頻率**推論的交易系統，1750 億參數的 LLM 推論成本極高，且延遲難以控制。LightGBM 雖然複雜度較低，但其**推論速度快**且**營運成本極低**，更適合此類高流量應用。</p>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 py-6 mt-8 border-t border-gray-300">
+            <p>本講義涵蓋了生成式 AI、多模態、雲端策略與高階治理的核心知識點，祝您考試順利！</p>
+        </footer>
+    </main>
+
+</body>
+</html>

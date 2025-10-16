@@ -1,0 +1,89 @@
+<div style="font-family: 'Segoe UI', sans-serif; line-height: 1.6; background-color: #f9f9fc; padding: 20px;">
+
+  <!-- 標題 -->
+  <h1 style="color: #2c3e50; font-size: 32px; font-weight: bold;">📘 階段一：AI 技術應用理解</h1>
+  <p style="color: #7f8c8d; font-size: 18px;">涵蓋 NLP、CV、生成式 AI、多模態 AI 四大模組，強化技術辨識、應用判斷與考題破題能力</p>
+
+  <!-- NLP 模組 -->
+  <div style="background-color: #eaf2ff; border-left: 6px solid #3498db; padding: 15px; margin-top: 30px;">
+    <h2 style="color: #2980b9; font-size: 24px;">🔹 自然語言處理（NLP）</h2>
+    <p style="color: #34495e;"><strong>原理：</strong>讓機器理解、分析、生成人類語言。核心流程：文字 → 分詞 → 向量化 → 模型分析。</p>
+
+    <ul style="color: #2c3e50;">
+      <li><strong>Tokenization（斷詞）：</strong>將句子切成詞彙單位。<br><em>比喻：像把香腸切片，方便料理。</em><br><strong>常見誤解：</strong>與詞形還原混淆，後者是語法還原。</li>
+      <li><strong>TF-IDF：</strong>衡量詞在文件中的重要性。<br><em>公式：</em>TF × log(總文件數 / 含該詞文件數)</li>
+      <li><strong>Word2Vec：</strong>將詞轉成向量，保留語意關係。<br><em>比喻：像把詞放進地圖上，距離代表語意相近。</em></li>
+    </ul>
+
+    <p style="color:#16a085; font-weight:bold;">📌 應用題：</p>
+    <p style="color:#2c3e50;">在文本資料處理過程中，若需「將接續的文本轉換為詞彙單位」，應使用哪種技術？</p>
+    <ul style="color:#2c3e50;">
+      <li>(A) 詞形還原 (Lemmatization)</li>
+      <li>(B) 停用詞移除 (Stopword Removal)</li>
+      <li><strong>(C) 斷詞 (Tokenization)</strong> ✅</li>
+      <li>(D) 詞頻-逆向文件頻率 (TF-IDF)</li>
+    </ul>
+  </div>
+
+  <!-- CV 模組 -->
+  <div style="background-color: #fef6e4; border-left: 6px solid #f39c12; padding: 15px; margin-top: 30px;">
+    <h2 style="color: #d35400; font-size: 24px;">🔹 電腦視覺（CV）</h2>
+    <p style="color: #34495e;"><strong>原理：</strong>讓機器理解影像內容，從像素中提取結構與語意。</p>
+
+    <ul style="color: #2c3e50;">
+      <li><strong>Image Classification：</strong>判斷整張圖是什麼。</li>
+      <li><strong>Object Detection：</strong>找出圖中物件及位置（含邊界框）。</li>
+      <li><strong>Semantic Segmentation：</strong>每個像素分類，不區分個體。</li>
+      <li><strong>Instance Segmentation：</strong>區分同類物件的不同個體。</li>
+      <li><strong>CNN：</strong>卷積神經網路，適合影像辨識。<br><em>公式：</em>ReLU(x) = max(0, x)</li>
+    </ul>
+
+    <p style="color:#16a085; font-weight:bold;">📌 應用題：</p>
+    <p style="color:#2c3e50;">下列何者最適合用於辨識圖像中物件的位置與類型？</p>
+    <ul style="color:#2c3e50;">
+      <li>(A) 圖像分類 (Image Classification)</li>
+      <li><strong>(B) 物件偵測 (Object Detection)</strong> ✅</li>
+      <li>(C) 語義分割 (Semantic Segmentation)</li>
+      <li>(D) 實例分割 (Instance Segmentation)</li>
+    </ul>
+  </div>
+
+  <!-- 生成式 AI 模組 -->
+  <div style="background-color: #e8f8f5; border-left: 6px solid #1abc9c; padding: 15px; margin-top: 30px;">
+    <h2 style="color: #16a085; font-size: 24px;">🔹 生成式 AI（Generative AI）</h2>
+    <p style="color: #34495e;"><strong>原理：</strong>透過模型生成文字、圖像、程式碼等內容，常用架構為 Transformer。</p>
+
+    <ul style="color: #2c3e50;">
+      <li><strong>Transformer：</strong>使用注意力機制處理序列資料，支援語意理解與生成。</li>
+      <li><strong>模型壓縮：</strong>減少模型大小與記憶體使用。<br><em>技術：</em>參數剪枝、量化、知識蒸餾</li>
+      <li><strong>AutoML：</strong>自動化模型選擇與調參。</li>
+    </ul>
+
+    <p style="color:#16a085; font-weight:bold;">📌 應用題：</p>
+    <p style="color:#2c3e50;">企業在生成式 AI 導入中，若希望減少記憶體使用，應選擇哪種技術？</p>
+    <ul style="color:#2c3e50;">
+      <li><strong>(A) 參數剪枝</strong> ✅</li>
+      <li>(B) 增加訓練數據量</li>
+      <li>(C) 增加模型層數</li>
+      <li>(D) 使用更高維數據</li>
+    </ul>
+  </div>
+
+  <!-- 多模態 AI 模組 -->
+  <div style="background-color: #f0ebf8; border-left: 6px solid #8e44ad; padding: 15px; margin-top: 30px;">
+    <h2 style="color: #8e44ad; font-size: 24px;">🔹 多模態 AI（Multimodal AI）</h2>
+    <p style="color: #34495e;"><strong>原理：</strong>整合不同型態資料（如影像＋文字）進行分析與預測。</p>
+
+    <ul style="color: #2c3e50;">
+      <li><strong>Early Fusion：</strong>在輸入階段整合資料。</li>
+      <li><strong>Late Fusion：</strong>在輸出階段合併結果。</li>
+      <li><strong>Transformer 融合：</strong>用注意力機制整合語意。</li>
+    </ul>
+
+    <p style="color:#16a085; font-weight:bold;">📌 應用題：</p>
+    <p style="color:#2c3e50;">在多模態學習中，Early Fusion 的主要特徵為何？</p>
+    <ul style="color:#2c3e50;">
+      <li>(A) 將不同模態資料的輸出結果進行決策合併</li>
+      <li><strong>(B) 在模型輸入階段或特徵提取階段整合不同模態資料</strong> ✅</li>
+      <li>(C) 僅處理單一來源的資料輸入</li>
+      <li>(D) 利用注意力機制在深層隱
